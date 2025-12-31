@@ -1,0 +1,6052 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "Run search for type in location on Google search": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [
+          {
+            "node": "Call 'Update DynamoDB with data'1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get row(s)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent2": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Run search for type in location on Google search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run search for type in location on Google search1": {
+      "main": [
+        [
+          {
+            "node": "Run search for profile",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "If caption contains the data",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If caption contains the data1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If caption contains the data2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get row(s)3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Analyze an image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "Analyze video1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze video1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Switch4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        [
+          {
+            "node": "Split Out2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields5": {
+      "main": [
+        [
+          {
+            "node": "Call 'Update table with Instagram page'",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If caption contains the data": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields9",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Switch5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields7": {
+      "main": [
+        [
+          {
+            "node": "Call 'Update table with Instagram page'8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items3": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get row(s)2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript1": {
+      "main": [
+        [
+          {
+            "node": "Split Out3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out3": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields8": {
+      "main": [
+        [
+          {
+            "node": "Call 'Update table with Instagram page'7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model5": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent5",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If caption contains the data1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent5": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "if more then one place3": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript2": {
+      "main": [
+        [
+          {
+            "node": "Split Out4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out4": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields11": {
+      "main": [
+        [
+          {
+            "node": "Call 'Update table with Instagram page'3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items4": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get row(s)4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model7": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent7",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If caption contains the data2": {
+      "main": [
+        [
+          {
+            "node": "AI Agent7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent7": {
+      "main": [
+        [
+          {
+            "node": "if more then one place",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript3": {
+      "main": [
+        [
+          {
+            "node": "Split Out5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "if more then one place": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items5": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get row(s)6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Call 'Update table with Instagram page'4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields15": {
+      "main": [
+        [
+          {
+            "node": "Call 'Update table with Instagram page'5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "if more then one place3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields4": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items6": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get row(s)5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out2": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields17": {
+      "main": [
+        [
+          {
+            "node": "Call 'Update table with Instagram page'1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out5": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model11": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent11",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent11": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields18",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run search for profile": {
+      "main": [
+        [
+          {
+            "node": "Get row(s)1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Search Profile": {
+      "main": [
+        [
+          {
+            "node": "AI Agent11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields18": {
+      "main": [
+        [
+          {
+            "node": "If bussiness",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If bussiness": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields21",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Switch3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch3": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields21": {
+      "main": [
+        [
+          {
+            "node": "Call 'Update table with Instagram page'9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call 'Update table with Instagram page'": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call 'Update table with Instagram page'1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call 'Update table with Instagram page'3": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call 'Update table with Instagram page'4": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call 'Update table with Instagram page'5": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call 'Update table with Instagram page'7": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call 'Update table with Instagram page'8": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call 'Update table with Instagram page'9": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields6": {
+      "main": [
+        [
+          {
+            "node": "AI Agent5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch4": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields12": {
+      "main": [
+        [
+          {
+            "node": "Call 'Update table with Instagram page'10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call 'Update table with Instagram page'10": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields23": {
+      "main": [
+        [
+          {
+            "node": "Call 'Update table with Instagram page'11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call 'Update table with Instagram page'11": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s)1": {
+      "main": [
+        [
+          {
+            "node": "If bussiness does not exist on table1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If bussiness does not exist on table1": {
+      "main": [
+        [
+          {
+            "node": "Set Search Profile",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing3": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s)": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If reached to results number": {
+      "main": [
+        [
+          {
+            "node": "Call 'Update DynamoDB with data'",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze an image": {
+      "main": [
+        [
+          {
+            "node": "Parse Image Places",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Image Places": {
+      "main": [
+        [
+          {
+            "node": "Call 'Update table with Instagram page'12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call 'Update table with Instagram page'12": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch5": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields8",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code in JavaScript1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing5": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields23",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing6": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "Run search for type in location on Google search1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing7": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields9": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s)2": {
+      "main": [
+        [
+          {
+            "node": "Aggregate1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "If reached to results number",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate1": {
+      "main": [
+        [
+          {
+            "node": "If reached to results number1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If reached to results number1": {
+      "main": [
+        [
+          {
+            "node": "Call 'Update DynamoDB with data'6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s)3": {
+      "main": [
+        [
+          {
+            "node": "Aggregate2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate2": {
+      "main": [
+        [
+          {
+            "node": "If reached to results number2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If reached to results number2": {
+      "main": [
+        [
+          {
+            "node": "Call 'Update DynamoDB with data'5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s)4": {
+      "main": [
+        [
+          {
+            "node": "Aggregate3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate3": {
+      "main": [
+        [
+          {
+            "node": "If reached to results number3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If reached to results number3": {
+      "main": [
+        [
+          {
+            "node": "Call 'Update DynamoDB with data'3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s)5": {
+      "main": [
+        [
+          {
+            "node": "Aggregate4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate4": {
+      "main": [
+        [
+          {
+            "node": "If reached to results number4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If reached to results number4": {
+      "main": [
+        [
+          {
+            "node": "Call 'Update DynamoDB with data'4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields17",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s)6": {
+      "main": [
+        [
+          {
+            "node": "Aggregate5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate5": {
+      "main": [
+        [
+          {
+            "node": "If reached to results number5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If reached to results number5": {
+      "main": [
+        [
+          {
+            "node": "Call 'Update DynamoDB with data'2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields10": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-26T05:39:10.217Z",
+  "id": "iV8ZBQIeXVdcX8ir",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Instagram Scraper",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "Run actor and get dataset",
+        "actorSource": "store",
+        "actorId": {
+          "__rl": true,
+          "value": "nFJndFXA5zjCTuudP",
+          "mode": "list",
+          "cachedResultName": "Google Search Results Scraper (apify/google-search-scraper)",
+          "cachedResultUrl": "https://console.apify.com/actors/nFJndFXA5zjCTuudP/input"
+        },
+        "customBody": "={\n  \"aiMode\": \"aiModeOff\",\n  \"focusOnPaidAds\": false,\n  \"forceExactMatch\": false,\n  \"includeIcons\": false,\n  \"includeUnfilteredResults\": false,\n  \"maxPagesPerQuery\": 1,\n  \"maximumLeadsEnrichmentRecords\": 0,\n  \"mobileResults\": false,\n  \"queries\": \"Best {{ $json.Type }} in {{ $json.Location }}\",\n  \"resultsPerPage\": {{ $json.numberOfResults }},\n  \"saveHtml\": false,\n  \"saveHtmlToKeyValueStore\": true,\n  \"searchLanguage\": \"en\",\n  \"site\": \"instagram.com\",\n  \"languageCode\": \"\",\n  \"wordsInTitle\": [],\n  \"wordsInText\": [],\n  \"wordsInUrl\": []\n}"
+      },
+      "type": "@apify/n8n-nodes-apify.apify",
+      "typeVersion": 1,
+      "position": [
+        -5856,
+        8512
+      ],
+      "id": "98e027a4-cc95-4ed6-aacb-0f4f7896110d",
+      "name": "Run search for type in location on Google search",
+      "credentials": {
+        "apifyApi": {
+          "id": "B45wSCvg3xLaLVQ6",
+          "name": "Apify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -5216,
+        8512
+      ],
+      "id": "7875b051-80d0-4c72-b498-c2d72d40fe0a",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const newItems = [];\n\nfor (const item of items) {\n  \n  const location = item.json.Location; \n  const type = item.json.Type;\n  const scarpeInvokeID = item.json.ScarpeInvokeID;\n  const userId = item.json.UserID;\n  \n  const organicResults = item.json.data.organicResults || [];\n\n  for (const result of organicResults) {\n    newItems.push({\n      json: {\n        ...result,\n        Location: location,\n        Type: type,\n        ScarpeInvokeID: scarpeInvokeID,\n        UserID: userId\n      }\n    });\n  }\n}\n\n\nreturn newItems;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -5440,
+        8512
+      ],
+      "id": "ab6b63cc-a765-4abb-bd65-000b351cfec9",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -4032,
+        6272
+      ],
+      "id": "759eb958-4651-4245-a143-ee8b30d0b3cb",
+      "name": "Google Gemini Chat Model2",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "YXrAUY1bjwbH5FBX",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Here is the JSON data to analyze:\n{{ JSON.stringify($json) }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=You are a precise data cleaning assistant. Your task is to extract the exact **Business Name** from the provided JSON object.\n\n### 1. Cleaning Rules (Strict Priority):\n1. **Primary Source:** Use the `title` field from the input.\n2. **Handle Removal:** Delete any Instagram handles, usually found in parentheses (e.g., \"(@username)\").\n3. **Location Stripping:** Remove the value \"{{ $('Loop Over Items1').item.json.Location }}\" from the title if it appears.\n4. **Cleanup:** Remove any trailing separators like \"|\", \"-\", \"–\", or extra whitespace.\n5. **Business Identity:** Keep the brand name and the venue type (e.g., \"Cafe\", \"Gym\", \"Roastery\").\n\n### 2. Error Handling & Safety:\n- **Empty Input:** If the input JSON is empty, missing a title, or invalid, return an empty string \"\" and NOTHING ELSE.\n- **No Conversation:** Never explain why you cannot process the data. Never ask for valid data.\n- **Pure Output:** Your entire response must consist ONLY of the cleaned name or an empty string.\n\n### 3. Input Data:\n{{ JSON.stringify($json) }}\n\n### 4. Output Requirement:\nReturn ONLY the cleaned name string. Do not use quotes, markdown, or any explanatory text."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        -4096,
+        6048
+      ],
+      "id": "5c67e392-06be-4bff-85f4-e6461adc146b",
+      "name": "AI Agent2",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "Location"
+            },
+            {
+              "name": "Type"
+            },
+            {
+              "name": "ScarpeInvokeID"
+            },
+            {
+              "name": "numberOfResults",
+              "type": "number"
+            },
+            {
+              "name": "UserID"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -6096,
+        8512
+      ],
+      "id": "83d86ace-617d-44e1-b9e0-0cd78af09112",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('Loop Over Items').item.json.images }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "apifyApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        448,
+        6144
+      ],
+      "id": "075c4fce-fd08-499c-b98b-598ae820a5bf",
+      "name": "HTTP Request",
+      "credentials": {
+        "apifyApi": {
+          "id": "B45wSCvg3xLaLVQ6",
+          "name": "Apify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "Run actor and get dataset",
+        "actorSource": "store",
+        "actorId": {
+          "__rl": true,
+          "value": "shu8hvrXbJbY3Eb9W",
+          "mode": "list",
+          "cachedResultName": "Instagram Scraper (apify/instagram-scraper)",
+          "cachedResultUrl": "https://console.apify.com/actors/shu8hvrXbJbY3Eb9W/input"
+        },
+        "customBody": "={\n  \"addParentData\": false,\n  \"directUrls\": [\n    \"{{ $('Loop Over Items1').item.json.url }}\"\n  ],\n  \"enhanceUserSearchWithFacebookPage\": false,\n  \"isUserReelFeedURL\": false,\n  \"isUserTaggedFeedURL\": false,\n  \"resultsLimit\": 10,\n  \"resultsType\": \"posts\",\n  \"searchLimit\": 1,\n  \"searchType\": \"hashtag\"\n}"
+      },
+      "type": "@apify/n8n-nodes-apify.apify",
+      "typeVersion": 1,
+      "position": [
+        -3744,
+        6448
+      ],
+      "id": "1ca60ecc-31a5-40c5-8608-0907ec4807ad",
+      "name": "Run search for type in location on Google search1",
+      "credentials": {
+        "apifyApi": {
+          "id": "B45wSCvg3xLaLVQ6",
+          "name": "Apify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "8d514190-e8f0-4dc6-832b-7940c56c3a68",
+              "leftValue": "={{ $('Loop Over Items1').item.json.url }}",
+              "rightValue": "=/p/",
+              "operator": {
+                "type": "string",
+                "operation": "notContains"
+              }
+            },
+            {
+              "id": "2f6169ca-2f7e-4303-9cf4-67ca42a1b1af",
+              "leftValue": "={{ $('Loop Over Items1').item.json.url }}",
+              "rightValue": "=/reel/",
+              "operator": {
+                "type": "string",
+                "operation": "notContains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -4320,
+        6352
+      ],
+      "id": "43c3f5e4-f3f6-4a4b-81f4-467ffa4a88c2",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('Run search for type in location on Google search1').item.json.type }}",
+                    "rightValue": "=Sidecar",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "9d7d06ae-1cdd-4e04-9632-d6ca7f502558"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "b2df7091-48ba-4e30-97e4-804e97480a77",
+                    "leftValue": "={{ $('Run search for type in location on Google search1').item.json.type }}",
+                    "rightValue": "Video",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "950e1d96-a484-43b2-afc3-d1c2fc5c8567",
+                    "leftValue": "={{ $('Run search for type in location on Google search1').item.json.type }}",
+                    "rightValue": "Image",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        -1600,
+        6960
+      ],
+      "id": "5f76bdf9-ac56-4234-ba87-7cb79ea735dd",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -448,
+        6128
+      ],
+      "id": "0c194317-f30e-4fd6-99f7-e02c96390560",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('Run search for type in location on Google search1').item.json.videoUrl }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "apifyApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        6624
+      ],
+      "id": "3c3b1fdd-69b5-40cc-b602-6f24f9683df4",
+      "name": "HTTP Request1",
+      "credentials": {
+        "apifyApi": {
+          "id": "B45wSCvg3xLaLVQ6",
+          "name": "Apify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "video",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "text": "=Role: You are an intelligent Local Guide and Video Analyst.\nContext: The user searched for a bussiness on the internet and found this video.\n\nTask:\n1. Analyze the attached video (visuals, text overlays, and audio).\n2. Identify specific physical places (venues) mentioned or shown.\n3. RELEVANCE FILTER: Extract ONLY the places that match the user's search intent in location - for this one is koh phangan.\n   - Ignore technical search operators like \"site:...\" or \"filetype:...\".\n   - Focus on the subject (e.g., if the search is \"Best Cafe\", list only cafes. If \"Hidden Gems\", list the specific spots).\n\nOutput Rules:\n- Return strictly a valid JSON array of strings.\n- Do NOT use Markdown code blocks (no ```json).\n- Do NOT write any conversational text or explanations.\n- If no relevant places are found, return an empty array [].\n\nExample Output:\n[\"What's Cup\", \"Bubba's Coffee\", \"Indigo\"]",
+        "inputType": "binary",
+        "binaryPropertyName": "=data",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        224,
+        6624
+      ],
+      "id": "a00abf2b-ed00-4622-96a9-0a2ec7a311b7",
+      "name": "Analyze video1",
+      "retryOnFail": true,
+      "waitBetweenTries": 2500,
+      "maxTries": 5,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "YXrAUY1bjwbH5FBX",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4635bcca-de8e-4de9-a019-ad0904b4480b",
+              "name": "=places",
+              "value": "={{ JSON.parse($json.content.parts[0].text) }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        448,
+        6624
+      ],
+      "id": "20faa746-ac0e-442b-926e-376083d0dcd3",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6e440ed2-9d30-43e4-866c-5afa1c927224",
+              "name": "place",
+              "value": "={{ $json.places[0] }}",
+              "type": "string"
+            },
+            {
+              "id": "f95749e2-4fcd-4bb8-acde-2686ff983940",
+              "name": "Location",
+              "value": "={{ $('Loop Over Items1').item.json.Location }}",
+              "type": "string"
+            },
+            {
+              "id": "936ce4bd-1e40-4a9b-9e4b-a955c41cedf5",
+              "name": "Type",
+              "value": "={{ $('Loop Over Items1').item.json.Type }}",
+              "type": "string"
+            },
+            {
+              "id": "11933e36-fdce-4a46-87a4-f1dba6998e7d",
+              "name": "ScarpeInvokeID",
+              "value": "={{ $('Loop Over Items1').item.json.ScarpeInvokeID }}",
+              "type": "string"
+            },
+            {
+              "id": "6e462571-46a3-4707-aa14-e1ff1b0916ac",
+              "name": "=UserID",
+              "value": "={{ $('Loop Over Items1').item.json.UserID }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        896,
+        6624
+      ],
+      "id": "95f7e231-1932-473b-818f-7f909f41ab65",
+      "name": "Edit Fields5"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6e440ed2-9d30-43e4-866c-5afa1c927224",
+              "name": "places",
+              "value": "={{ $json.places }}",
+              "type": "array"
+            },
+            {
+              "id": "f95749e2-4fcd-4bb8-acde-2686ff983940",
+              "name": "Location",
+              "value": "={{ $('Loop Over Items1').item.json.Location }}",
+              "type": "string"
+            },
+            {
+              "id": "936ce4bd-1e40-4a9b-9e4b-a955c41cedf5",
+              "name": "Type",
+              "value": "={{ $('Loop Over Items1').item.json.Type }}",
+              "type": "string"
+            },
+            {
+              "id": "b2124689-e102-4e30-8022-b9af3d043f98",
+              "name": "ScarpeInvokeID",
+              "value": "={{ $('Loop Over Items1').item.json.ScarpeInvokeID }}",
+              "type": "string"
+            },
+            {
+              "id": "03bf5c4f-1921-444c-87a8-417e931e9d97",
+              "name": "=UserID",
+              "value": "={{ $('Loop Over Items1').item.json.UserID }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        896,
+        6816
+      ],
+      "id": "45999ec3-45cb-4ee3-ac3e-00baaa214a1a",
+      "name": "Edit Fields3"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -736,
+        5840
+      ],
+      "id": "2e113319-d088-4f4f-b690-801ef931f474",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "YXrAUY1bjwbH5FBX",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Here is the JSON data to analyze:\n{{ JSON.stringify($json.data) }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=You are a precise Entity Extraction Assistant. Your task is to analyze the provided Instagram post content and extract a list of specific physical venues, business names, or points of interest mentioned.\n\nFollow these extraction rules strictly:\n1.  **Analyze Content:** Scan the `caption` (and `ocrText` if available) for proper nouns representing specific places (e.g., restaurants, cafes, hotels, viewpoints, landmarks).\n2.  **Identify Lists:** Since this is a sidecar post, look for patterns indicative of a list (bullet points, numbered lists like \"1.\", \"2.\", or phrases like \"First stop:\", \"Next up:\").\n3.  **Distinguish Place vs. Area:** Do NOT extract general cities, islands, or countries (e.g., ignore \"Koh Phangan\", \"Thailand\", \"London\") unless they are part of a specific venue name (e.g., \"Grand Hotel London\").\n4.  **Clean Output:**\n    * Remove emojis (e.g., \"☕️ Mimi's\" -> \"Mimi's\").\n    * Remove numbering/bullets (e.g., \"1. The Jam\" -> \"The Jam\").\n    * Remove Instagram handles (e.g., \"@username\").\n    * Remove generic descriptive text (e.g., \"The amazing sunset at Zen Beach\" -> \"Zen Beach\").\n5.  **Single vs. Multiple:** If only one place is mentioned, extract it as a single item in the list.\n\nInput Data:\n{{ JSON.stringify($json) }}\n\nOutput Requirement:\n* Return ONLY a valid JSON Array of strings.\n* Format: `[\"Place Name 1\", \"Place Name 2\"]`\n* If no specific places are found, return exactly: `[]`\n* Do not include markdown formatting (like ```json), quotes, or conversational filler."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        -800,
+        5616
+      ],
+      "id": "91f8ddda-9a5c-430d-88a1-deeb45d0b797",
+      "name": "AI Agent",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6715f4e7-a08a-42ce-9075-eaf237ceb14e",
+              "leftValue": "={{ $('Run search for type in location on Google search1').item.json.caption }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "5f52f94d-0240-4577-a335-a49c017cb68c",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1376,
+        5888
+      ],
+      "id": "aea2d139-9b99-481b-a7ee-c33ddc62623a",
+      "name": "If caption contains the data"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        224,
+        5616
+      ],
+      "id": "d3b1182a-ac1a-4c62-83e6-fdf60aae7fb0",
+      "name": "Loop Over Items3"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6e440ed2-9d30-43e4-866c-5afa1c927224",
+              "name": "place",
+              "value": "={{ $('Loop Over Items3').item.json.output }}",
+              "type": "string"
+            },
+            {
+              "id": "f95749e2-4fcd-4bb8-acde-2686ff983940",
+              "name": "Location",
+              "value": "={{ $('Loop Over Items1').item.json.Location }}",
+              "type": "string"
+            },
+            {
+              "id": "936ce4bd-1e40-4a9b-9e4b-a955c41cedf5",
+              "name": "Type",
+              "value": "={{ $('Loop Over Items1').item.json.Type }}",
+              "type": "string"
+            },
+            {
+              "id": "48bdfcce-6246-444e-a46e-c6b767501706",
+              "name": "ScarpeInvokeID",
+              "value": "={{ $('Loop Over Items1').item.json.ScarpeInvokeID }}",
+              "type": "string"
+            },
+            {
+              "id": "d25b886d-4b79-4c27-8f66-6d698700ea16",
+              "name": "=UserID",
+              "value": "={{ $('Loop Over Items1').item.json.UserID }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1120,
+        5648
+      ],
+      "id": "506953e6-cd78-4500-b38e-17a056270d0e",
+      "name": "Edit Fields7"
+    },
+    {
+      "parameters": {
+        "jsCode": "for (const item of items) {\n  if (typeof item.json.output === 'string') {\n    try {\n      item.json.output = JSON.parse(item.json.output);\n    } catch (e) {\n    }\n  }\n}\nreturn items;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -224,
+        5616
+      ],
+      "id": "f070bd82-3012-4cb1-9ed8-7f4e4f596b5c",
+      "name": "Code in JavaScript1"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "output",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        0,
+        5616
+      ],
+      "id": "00aac534-5d68-44e4-843a-50bcb41e8001",
+      "name": "Split Out3"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6e440ed2-9d30-43e4-866c-5afa1c927224",
+              "name": "place",
+              "value": "={{ $json.output }}",
+              "type": "string"
+            },
+            {
+              "id": "f95749e2-4fcd-4bb8-acde-2686ff983940",
+              "name": "Location",
+              "value": "={{ $('Loop Over Items1').item.json.Location }}",
+              "type": "string"
+            },
+            {
+              "id": "936ce4bd-1e40-4a9b-9e4b-a955c41cedf5",
+              "name": "Type",
+              "value": "={{ $('Loop Over Items1').item.json.Type }}",
+              "type": "string"
+            },
+            {
+              "id": "b71f8d19-9a34-48b3-abe1-8dd1560ae18b",
+              "name": "RequestID",
+              "value": "={{ $('Loop Over Items1').item.json.RequestID }}",
+              "type": "string"
+            },
+            {
+              "id": "3d70560b-90a9-4df8-9b20-3005f1908d12",
+              "name": "=UserID",
+              "value": "={{ $('Loop Over Items1').item.json.UserID }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -224,
+        5856
+      ],
+      "id": "ae4ab8dc-a328-465d-b1d3-2025516837b7",
+      "name": "Edit Fields8"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6715f4e7-a08a-42ce-9075-eaf237ceb14e",
+              "leftValue": "={{ $('Run search for type in location on Google search1').item.json.caption }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1376,
+        7088
+      ],
+      "id": "bb016006-df7f-4ce5-91a5-55ce740923c0",
+      "name": "If caption contains the data1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -736,
+        7456
+      ],
+      "id": "276052eb-eabe-472d-a447-7beac4a6ed8a",
+      "name": "Google Gemini Chat Model5",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "YXrAUY1bjwbH5FBX",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Here is the JSON data to analyze:\n{{ JSON.stringify($json.caption) }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=You are a precise Entity Extraction Assistant. Your task is to analyze the provided Instagram post content and extract a list of specific physical venues, business names, or points of interest mentioned.\n\nFollow these extraction rules strictly:\n1.  **Analyze Content:** Scan the `caption` (and `ocrText` if available) for proper nouns representing specific places (e.g., restaurants, cafes, hotels, viewpoints, landmarks).\n2.  **Identify Lists:** Since this is a sidecar post, look for patterns indicative of a list (bullet points, numbered lists like \"1.\", \"2.\", or phrases like \"First stop:\", \"Next up:\").\n3.  **Distinguish Place vs. Area:** Do NOT extract general cities, islands, or countries (e.g., ignore \"Koh Phangan\", \"Thailand\", \"London\") unless they are part of a specific venue name (e.g., \"Grand Hotel London\").\n4.  **Clean Output:**\n    * Remove emojis (e.g., \"☕️ Mimi's\" -> \"Mimi's\").\n    * Remove numbering/bullets (e.g., \"1. The Jam\" -> \"The Jam\").\n    * Remove Instagram handles (e.g., \"@username\").\n    * Remove generic descriptive text (e.g., \"The amazing sunset at Zen Beach\" -> \"Zen Beach\").\n5.  **Single vs. Multiple:** If only one place is mentioned, extract it as a single item in the list.\n\nInput Data:\n{{ JSON.stringify($json) }}\n\nOutput Requirement:\n* Return ONLY a valid JSON Array of strings.\n* Format: `[\"Place Name 1\", \"Place Name 2\"]`\n* If no specific places are found, return exactly: `[]`\n* Do not include markdown formatting (like ```json), quotes, or conversational filler."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        -800,
+        7232
+      ],
+      "id": "3911286a-f8a9-4c58-92bb-6ee5076701d5",
+      "name": "AI Agent5",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6c21226e-76b6-418c-b654-b04fbca1efa1",
+              "leftValue": "={{ $json.output.parseJson().length }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -224,
+        7328
+      ],
+      "id": "5d1d91e2-ed8c-44f9-bd00-c98ca9bbffb0",
+      "name": "if more then one place3"
+    },
+    {
+      "parameters": {
+        "jsCode": "for (const item of items) {\n  if (typeof item.json.output === 'string') {\n    try {\n      item.json.output = JSON.parse(item.json.output);\n    } catch (e) {\n    }\n  }\n}\nreturn items;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        0,
+        7232
+      ],
+      "id": "e15fbebe-f0fa-4fb0-8885-a03c791b2857",
+      "name": "Code in JavaScript2"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "output",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        224,
+        7232
+      ],
+      "id": "bc94c6ef-a186-40d6-ac2c-db76d6bdc700",
+      "name": "Split Out4"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        448,
+        7232
+      ],
+      "id": "af0ec5dd-bded-4349-ab59-e238aade7433",
+      "name": "Loop Over Items4"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6e440ed2-9d30-43e4-866c-5afa1c927224",
+              "name": "place",
+              "value": "={{ $('Loop Over Items4').item.json.output }}",
+              "type": "string"
+            },
+            {
+              "id": "f95749e2-4fcd-4bb8-acde-2686ff983940",
+              "name": "Location",
+              "value": "={{ $('Loop Over Items1').item.json.Location }}",
+              "type": "string"
+            },
+            {
+              "id": "936ce4bd-1e40-4a9b-9e4b-a955c41cedf5",
+              "name": "Type",
+              "value": "={{ $('Loop Over Items1').item.json.Type }}",
+              "type": "string"
+            },
+            {
+              "id": "f130acc8-7f3b-43fd-a754-9fc462188048",
+              "name": "ScarpeInvokeID",
+              "value": "={{ $('Loop Over Items1').item.json.ScarpeInvokeID }}",
+              "type": "string"
+            },
+            {
+              "id": "0fe5ed35-3533-43ef-9aa5-2cbdad9a33b5",
+              "name": "=UserID",
+              "value": "={{ $('Loop Over Items1').item.json.UserID }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1344,
+        7248
+      ],
+      "id": "f469d43f-831e-4afb-b513-a88c40b82689",
+      "name": "Edit Fields11"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6715f4e7-a08a-42ce-9075-eaf237ceb14e",
+              "leftValue": "={{ $json.caption }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1376,
+        7824
+      ],
+      "id": "583a4cf2-2003-4ba9-8c40-6f27d042bf55",
+      "name": "If caption contains the data2"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -1088,
+        8048
+      ],
+      "id": "1a7f7605-cf02-4520-9291-98793312e047",
+      "name": "Google Gemini Chat Model7",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "YXrAUY1bjwbH5FBX",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Here is the JSON data to analyze:\n{{ JSON.stringify($json) }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=You are a precise Entity Extraction Assistant. Your task is to analyze the provided Instagram post content and extract a list of specific physical venues, business names, or points of interest mentioned.\n\nFollow these extraction rules strictly:\n1.  **Analyze Content:** Scan the `caption` (and `ocrText` if available) for proper nouns representing specific places (e.g., restaurants, cafes, hotels, viewpoints, landmarks).\n2.  **Identify Lists:** Since this is a sidecar post, look for patterns indicative of a list (bullet points, numbered lists like \"1.\", \"2.\", or phrases like \"First stop:\", \"Next up:\").\n3.  **Distinguish Place vs. Area:** Do NOT extract general cities, islands, or countries (e.g., ignore \"Koh Phangan\", \"Thailand\", \"London\") unless they are part of a specific venue name (e.g., \"Grand Hotel London\").\n4.  **Clean Output:**\n    * Remove emojis (e.g., \"☕️ Mimi's\" -> \"Mimi's\").\n    * Remove numbering/bullets (e.g., \"1. The Jam\" -> \"The Jam\").\n    * Remove Instagram handles (e.g., \"@username\").\n    * Remove generic descriptive text (e.g., \"The amazing sunset at Zen Beach\" -> \"Zen Beach\").\n5.  **Single vs. Multiple:** If only one place is mentioned, extract it as a single item in the list.\n\nInput Data:\n{{ JSON.stringify($json) }}\n\nOutput Requirement:\n* Return ONLY a valid JSON Array of strings.\n* Format: `[\"Place Name 1\", \"Place Name 2\"]`\n* If no specific places are found, return exactly: `[]`\n* Do not include markdown formatting (like ```json), quotes, or conversational filler."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        -1152,
+        7824
+      ],
+      "id": "d5d686ad-1274-480e-b8c8-3ad1bc0cc0ff",
+      "name": "AI Agent7",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6c21226e-76b6-418c-b654-b04fbca1efa1",
+              "leftValue": "={{ $json.output.length }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -736,
+        7824
+      ],
+      "id": "9b03a337-abc5-43eb-8c72-2299401ee111",
+      "name": "if more then one place"
+    },
+    {
+      "parameters": {
+        "jsCode": "for (const item of items) {\n  if (typeof item.json.output === 'string') {\n    try {\n      item.json.output = JSON.parse(item.json.output);\n    } catch (e) {\n    }\n  }\n}\nreturn items;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -448,
+        7728
+      ],
+      "id": "a7ac219d-ebe6-4d9e-ae2a-94ec416204fe",
+      "name": "Code in JavaScript3"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        0,
+        7728
+      ],
+      "id": "4226eec2-fae8-46d6-bcd4-7e878edae9b2",
+      "name": "Loop Over Items5"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6e440ed2-9d30-43e4-866c-5afa1c927224",
+              "name": "place",
+              "value": "={{ $('Loop Over Items5').item.json.output }}",
+              "type": "string"
+            },
+            {
+              "id": "f95749e2-4fcd-4bb8-acde-2686ff983940",
+              "name": "Location",
+              "value": "={{ $('Loop Over Items1').item.json.Location }}",
+              "type": "string"
+            },
+            {
+              "id": "936ce4bd-1e40-4a9b-9e4b-a955c41cedf5",
+              "name": "Type",
+              "value": "={{ $('Loop Over Items1').item.json.Type }}",
+              "type": "string"
+            },
+            {
+              "id": "7c4531b7-8741-4973-bc07-2ea030e075cd",
+              "name": "ScarpeInvokeID",
+              "value": "={{ $('Loop Over Items1').item.json.ScarpeInvokeID }}",
+              "type": "string"
+            },
+            {
+              "id": "88a56c3a-530f-4113-8dcf-c12d8fc5c756",
+              "name": "=UserID",
+              "value": "={{ $('Loop Over Items1').item.json.UserID }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        896,
+        7760
+      ],
+      "id": "5ee269be-d059-4713-8e74-50e4fe4a3c69",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6e440ed2-9d30-43e4-866c-5afa1c927224",
+              "name": "place",
+              "value": "={{ $json.output }}",
+              "type": "string"
+            },
+            {
+              "id": "f95749e2-4fcd-4bb8-acde-2686ff983940",
+              "name": "Location",
+              "value": "={{ $('Loop Over Items1').item.json.Location }}",
+              "type": "string"
+            },
+            {
+              "id": "936ce4bd-1e40-4a9b-9e4b-a955c41cedf5",
+              "name": "Type",
+              "value": "={{ $('Loop Over Items1').item.json.Type }}",
+              "type": "string"
+            },
+            {
+              "id": "cde0c816-652b-41d9-9543-774d8c9afa7c",
+              "name": "=ScarpeInvokeID",
+              "value": "={{ $('Loop Over Items1').item.json.ScarpeInvokeID }}",
+              "type": "string"
+            },
+            {
+              "id": "d8defc01-c388-4d22-b76d-7c7cfcb375aa",
+              "name": "=UserID",
+              "value": "={{ $('Loop Over Items1').item.json.UserID }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -448,
+        7920
+      ],
+      "id": "51a1d6c5-fd1c-43a8-9163-2f5e553a058f",
+      "name": "Edit Fields15"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "7ad68819-2ecc-4413-9bc8-e349b5c42d07",
+              "leftValue": "={{ JSON.parse($json.output) }}",
+              "rightValue": "",
+              "operator": {
+                "type": "array",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -448,
+        7232
+      ],
+      "id": "7934555b-f056-47a3-9e3a-a287e6e99755",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a1f32667-6e68-4bea-99a4-20313c7de96b",
+              "name": "videoUrl",
+              "value": "={{ $('Run search for type in location on Google search1').item.json.videoUrl }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -224,
+        6768
+      ],
+      "id": "5807e6ee-09bc-4e9a-bdde-973d3ae8b326",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a1f32667-6e68-4bea-99a4-20313c7de96b",
+              "name": "images",
+              "value": "={{ $('Run search for type in location on Google search1').item.json.images }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1088,
+        6128
+      ],
+      "id": "1449863f-ef43-4c22-8d9b-eada9a3ad84d",
+      "name": "Edit Fields4"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "places",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        6816
+      ],
+      "id": "9cc17273-bad0-4738-bbe5-6a23076b3fe1",
+      "name": "Split Out2"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1344,
+        6816
+      ],
+      "id": "5bac1afc-65c8-45d1-a92f-ca3fc123bbea",
+      "name": "Loop Over Items6"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6e440ed2-9d30-43e4-866c-5afa1c927224",
+              "name": "place",
+              "value": "={{ $('Loop Over Items6').item.json.places }}",
+              "type": "string"
+            },
+            {
+              "id": "f95749e2-4fcd-4bb8-acde-2686ff983940",
+              "name": "Location",
+              "value": "={{ $('Loop Over Items1').item.json.Location }}",
+              "type": "string"
+            },
+            {
+              "id": "936ce4bd-1e40-4a9b-9e4b-a955c41cedf5",
+              "name": "Type",
+              "value": "={{ $('Loop Over Items1').item.json.Type }}",
+              "type": "string"
+            },
+            {
+              "id": "3cf69856-646e-4c81-96c1-4c1dce541e63",
+              "name": "ScarpeInvokeID",
+              "value": "={{ $('Loop Over Items1').item.json.ScarpeInvokeID }}",
+              "type": "string"
+            },
+            {
+              "id": "e451db9c-62e9-4e46-a90b-e63199990588",
+              "name": "=UserID",
+              "value": "={{ $('Loop Over Items1').item.json.UserID }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2240,
+        6848
+      ],
+      "id": "5340445f-9e60-4d3d-90a7-c874fcbd0743",
+      "name": "Edit Fields17"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "output",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        -224,
+        7728
+      ],
+      "id": "970d2a95-4f9e-430e-9d7c-7b071a461e97",
+      "name": "Split Out5"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -2560,
+        6928
+      ],
+      "id": "3ca572e8-32b9-409e-acc2-2cbbccfc1af8",
+      "name": "Google Gemini Chat Model11",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "YXrAUY1bjwbH5FBX",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Here is the JSON data to analyze:\n{{ JSON.stringify($json) }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=You are a detailed Business Verification Engine. Your task is to validate a profile against a Target Location and Type, and report exactly what you found.\n\n### 1. Inputs\n- **Target Location:** {{ $json.Location }}\n- **Target Category:** {{ $json.Type }}\n- **Profile Data:** {{ $json.profileInfo }}\n\n### 2. Validation Logic\nCompare the Profile Data to the Inputs.\n\n1.  **Business Check:** Is it a venue? (If not, status=FAIL, reason=NOT_BUSINESS).\n2.  **Category Check:** Does profile match Target Category? (If not, status=FAIL, reason=WRONG_TYPE).\n3.  **Location Check:**\n    - If Bio lists specific branches not including Target Location -> FAIL (Reason: WRONG_LOCATION).\n    - If Bio is generic (\"Thailand\") but no posts mention Target Location -> FAIL (Reason: WRONG_LOCATION).\n\n### 3. Output Requirement\nReturn a SINGLE JSON object.\n\n**Structure:**\n{\n  \"name\": \"Clean Name\" OR null,\n  \"status\": \"PASS\" OR \"FAIL\",\n  \"reason\": \"MATCH\" | \"NOT_BUSINESS\" | \"WRONG_TYPE\" | \"WRONG_LOCATION\",\n  \"found_location\": \"Briefly describe location found in bio (e.g. 'Phuket, Samui')\",\n  \"found_type\": \"Briefly describe category found (e.g. 'Italian Pizza')\",\n  \"input_location\": \"{{ $json.Location }}\",\n  \"input_type\": \"{{ $json.Type }}\",\n  \"scarpe_invoke_id\": \"{{ $json.ScarpeInvokeID }}\",\n  \"user_id\": \"{{ $json.UserID }}\"\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        -2624,
+        6704
+      ],
+      "id": "b1a67d89-0f72-4ef6-a88b-ce2cde377fd0",
+      "name": "AI Agent11",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "Run actor and get dataset",
+        "actorSource": "store",
+        "actorId": {
+          "__rl": true,
+          "value": "dSCLg0C3YEZ83HzYX",
+          "mode": "list",
+          "cachedResultName": "Instagram Profile Scraper (apify/instagram-profile-scraper)",
+          "cachedResultUrl": "https://console.apify.com/actors/dSCLg0C3YEZ83HzYX/input"
+        },
+        "customBody": "={\n  \"includeAboutSection\": false,\n  \"usernames\": [\n    {{ $json.ownerUsername.quote() }}\n  ]\n}"
+      },
+      "type": "@apify/n8n-nodes-apify.apify",
+      "typeVersion": 1,
+      "position": [
+        -3520,
+        6448
+      ],
+      "id": "f9d543e3-c80e-4f4b-8400-1c38a2a44057",
+      "name": "Run search for profile",
+      "credentials": {
+        "apifyApi": {
+          "id": "B45wSCvg3xLaLVQ6",
+          "name": "Apify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "29b2f5bb-0768-4d91-a88b-cf2aef02acb5",
+              "name": "profileInfo",
+              "value": "={{ $item(\"0\").$node[\"Run search for profile\"].json }}",
+              "type": "string"
+            },
+            {
+              "id": "cb243635-91e2-44f1-9761-4a0fe9e643bc",
+              "name": "Location",
+              "value": "={{ $('Loop Over Items1').item.json.Location }}",
+              "type": "string"
+            },
+            {
+              "id": "fe2c4aca-24cb-47f7-837b-62da9c636bd3",
+              "name": "Type",
+              "value": "={{ $('Loop Over Items1').item.json.Type }}",
+              "type": "string"
+            },
+            {
+              "id": "e096c1c3-153c-4d5e-a204-d1b1333a2668",
+              "name": "=ScarpeInvokeID",
+              "value": "={{ $('Loop Over Items1').item.json.ScarpeInvokeID }}",
+              "type": "string"
+            },
+            {
+              "id": "ce485c81-8f11-44aa-8cbe-a683f348a985",
+              "name": "=UserID",
+              "value": "={{ $('Loop Over Items1').item.json.UserID }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2848,
+        6704
+      ],
+      "id": "49f24b9b-7cf7-44bd-b6b5-c663e85ec4b5",
+      "name": "Set Search Profile"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "20f5dade-332a-4714-8a49-f3172e5d241c",
+              "name": "output",
+              "value": "={{ JSON.parse($json.output.replace(/```json|```/g, '').trim()) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2272,
+        6704
+      ],
+      "id": "eb8cac41-3f0b-411f-a299-eac960c4c08b",
+      "name": "Edit Fields18"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5249b8b4-c7f6-428c-a5b0-23606e6315ed",
+              "leftValue": "={{ JSON.parse($json.output).status }}",
+              "rightValue": "FAIL",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -2048,
+        6704
+      ],
+      "id": "265a22fc-7a99-4236-9891-d1b8ba421a2a",
+      "name": "If bussiness"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ JSON.parse($json.output).reason }}",
+                    "rightValue": "WRONG_LOCATION",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "7432bbda-3239-4d37-83db-d30639ae5f13"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "46a5443e-770b-492e-a8cb-7bf1be76c5ee",
+                    "leftValue": "={{ JSON.parse($json.output).reason }}",
+                    "rightValue": "WRONG_TYPE",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "89c46ecf-8fd6-477f-b51e-60e2d746a92c",
+                    "leftValue": "={{ JSON.parse($json.output).reason }}",
+                    "rightValue": "NOT_BUSINESS",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        -1824,
+        6800
+      ],
+      "id": "490f33c2-ecfa-454c-abc1-5fb63bde00f8",
+      "name": "Switch3"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6e440ed2-9d30-43e4-866c-5afa1c927224",
+              "name": "place",
+              "value": "={{ JSON.parse($json.output).name }}",
+              "type": "string"
+            },
+            {
+              "id": "f95749e2-4fcd-4bb8-acde-2686ff983940",
+              "name": "Location",
+              "value": "={{ JSON.parse($json.output).input_location }}",
+              "type": "string"
+            },
+            {
+              "id": "936ce4bd-1e40-4a9b-9e4b-a955c41cedf5",
+              "name": "Type",
+              "value": "={{ JSON.parse($json.output).input_type }}",
+              "type": "string"
+            },
+            {
+              "id": "81254e23-ed32-4722-84b3-ea505af84031",
+              "name": "ScarpeInvokeID",
+              "value": "={{ JSON.parse($json.output).scarpe_invoke_id }}",
+              "type": "string"
+            },
+            {
+              "id": "738d4085-d43f-4ce6-9fb8-eb74e1f9b41d",
+              "name": "UserID",
+              "value": "={{ JSON.parse($json.output).user_id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1824,
+        6608
+      ],
+      "id": "6b6510ba-84ae-4062-9d7d-9ad6bace5005",
+      "name": "Edit Fields21"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "images",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        -736,
+        6128
+      ],
+      "id": "e0bf6116-cb44-400d-a179-f5d1a998e252",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-pro",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-pro"
+        },
+        "text": "=Role: You are a high-precision Local Guide and Visual Data Extractor.\nContext: The user is extracting business names from video frames/images for a professional database.\n\nTask:\n1. Analyze the visual content (signage, branding, text overlays, menus).\n2. Identify specific physical venues shown or explicitly mentioned.\n3. STRICT RELEVANCE FILTER: \n   - Location: Extract ONLY places confirmed to be in **Koh Phangan**.\n   - Intent: Match only venues that fit the user's specific search subject.\n   - Evidence-Based only: If a place name is blurry, ambiguous, or you are not 99% sure of the spelling/existence, EXCLUDE it.\n\nProduction Guardrails:\n- NO GUESSING: Do not hallucinate names based on partial text. If you see a \"Cafe\" but the name is unreadable, ignore it.\n- NO CONTEXTUAL FILLING: Do not add famous places just because the video mentions the island, unless the place is actually visible or named in the text.\n- DE-DUPLICATION: Return each unique venue only once.\n\nOutput Rules:\n- Return STRICTLY a valid JSON array of strings.\n- NO MARKDOWN (No ```json or ```).\n- NO conversational text, headers, or footers.\n- If no 100% certain matches are found, return [].\n\nExample Output:\n[\"What's Cup\", \"Bubba's Coffee\", \"Indigo\"]",
+        "inputType": "binary",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        672,
+        6144
+      ],
+      "id": "d06b68c3-597c-4749-aeae-57dd34dded3b",
+      "name": "Analyze an image",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "YXrAUY1bjwbH5FBX",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "jmtISFsrzhnL2mcN",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/jmtISFsrzhnL2mcN",
+          "cachedResultName": "Update table with Instagram page"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "place": "={{ $json.place }}",
+            "Location": "={{ $json.Location }}",
+            "Type": "={{ $json.Type }}",
+            "numberOfResults": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+            "Source": "Instagram",
+            "UserID": "={{ $json.UserID }}",
+            "ScarpeInvokeID": "={{ $json.ScarpeInvokeID }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "place",
+              "displayName": "place",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "ScarpeInvokeID",
+              "displayName": "ScarpeInvokeID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "UserID",
+              "displayName": "UserID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1120,
+        6624
+      ],
+      "id": "ae47f43b-e008-4eb6-adcc-ae13e4700d1f",
+      "name": "Call 'Update table with Instagram page'"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "jmtISFsrzhnL2mcN",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/jmtISFsrzhnL2mcN",
+          "cachedResultName": "Update table with Instagram page"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "place": "={{ $json.place }}",
+            "Location": "={{ $json.Location }}",
+            "Type": "={{ $json.Type }}",
+            "numberOfResults": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+            "Source": "Instagram",
+            "UserID": "={{ $json.UserID }}",
+            "ScarpeInvokeID": "={{ $json.ScarpeInvokeID }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "place",
+              "displayName": "place",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "ScarpeInvokeID",
+              "displayName": "ScarpeInvokeID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "UserID",
+              "displayName": "UserID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        2464,
+        6912
+      ],
+      "id": "26c627ad-1f3c-49d1-a0c4-31ffd204fa04",
+      "name": "Call 'Update table with Instagram page'1"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "jmtISFsrzhnL2mcN",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/jmtISFsrzhnL2mcN",
+          "cachedResultName": "Update table with Instagram page"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "place": "={{ $json.place }}",
+            "Location": "={{ $json.Location }}",
+            "Type": "={{ $json.Type }}",
+            "numberOfResults": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+            "Source": "Instagram",
+            "UserID": "={{ $json.UserID }}",
+            "ScarpeInvokeID": "={{ $json.ScarpeInvokeID }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "place",
+              "displayName": "place",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "ScarpeInvokeID",
+              "displayName": "ScarpeInvokeID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "UserID",
+              "displayName": "UserID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1568,
+        7328
+      ],
+      "id": "c4c8f0e3-4caf-464e-8d6f-4081c8155462",
+      "name": "Call 'Update table with Instagram page'3"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "jmtISFsrzhnL2mcN",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/jmtISFsrzhnL2mcN",
+          "cachedResultName": "Update table with Instagram page"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "place": "={{ $json.place }}",
+            "Location": "={{ $json.Location }}",
+            "Type": "={{ $json.Type }}",
+            "numberOfResults": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+            "Source": "Instagram",
+            "UserID": "={{ $json.UserID }}",
+            "ScarpeInvokeID": "={{ $json.ScarpeInvokeID }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "place",
+              "displayName": "place",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "ScarpeInvokeID",
+              "displayName": "ScarpeInvokeID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "UserID",
+              "displayName": "UserID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1120,
+        7824
+      ],
+      "id": "811c6917-683c-47da-884c-cdf144e6ee63",
+      "name": "Call 'Update table with Instagram page'4"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "jmtISFsrzhnL2mcN",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/jmtISFsrzhnL2mcN",
+          "cachedResultName": "Update table with Instagram page"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "place": "={{ $json.place }}",
+            "Location": "={{ $json.Location }}",
+            "Type": "={{ $json.Type }}",
+            "numberOfResults": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+            "Source": "Instagram",
+            "UserID": "={{ $json.UserID }}",
+            "ScarpeInvokeID": "={{ $json.ScarpeInvokeID }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "place",
+              "displayName": "place",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "ScarpeInvokeID",
+              "displayName": "ScarpeInvokeID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "UserID",
+              "displayName": "UserID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        -224,
+        7920
+      ],
+      "id": "e96167e4-b137-4957-9cb8-cb1c6a416473",
+      "name": "Call 'Update table with Instagram page'5"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "jmtISFsrzhnL2mcN",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/jmtISFsrzhnL2mcN",
+          "cachedResultName": "Update table with Instagram page"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "place": "={{ $json.place }}",
+            "Location": "={{ $json.Location }}",
+            "Type": "={{ $json.Type }}",
+            "RequestID": "={{ $json.RequestID }}",
+            "numberOfResults": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+            "Source": "Instagram",
+            "UserID": "={{ $json.UserID }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "place",
+              "displayName": "place",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "RequestID",
+              "displayName": "RequestID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "UserID",
+              "displayName": "UserID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        5856
+      ],
+      "id": "0235e1d9-3eff-4914-ae7e-50b13bb334de",
+      "name": "Call 'Update table with Instagram page'7"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "jmtISFsrzhnL2mcN",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/jmtISFsrzhnL2mcN",
+          "cachedResultName": "Update table with Instagram page"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "place": "={{ $json.place }}",
+            "Location": "={{ $json.Location }}",
+            "Type": "={{ $json.Type }}",
+            "numberOfResults": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+            "Source": "Instagram",
+            "UserID": "={{ $json.UserID }}",
+            "ScarpeInvokeID": "={{ $json.ScarpeInvokeID }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "place",
+              "displayName": "place",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "ScarpeInvokeID",
+              "displayName": "ScarpeInvokeID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "UserID",
+              "displayName": "UserID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1344,
+        5712
+      ],
+      "id": "b0afd348-1171-44b1-a090-a4a2110e8553",
+      "name": "Call 'Update table with Instagram page'8"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "jmtISFsrzhnL2mcN",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/jmtISFsrzhnL2mcN",
+          "cachedResultName": "Update table with Instagram page"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "place": "={{ $json.place }}",
+            "Location": "={{ $json.Location }}",
+            "Type": "={{ $json.Type }}",
+            "numberOfResults": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+            "Source": "Instagram",
+            "UserID": "={{ $json.UserID }}",
+            "ScarpeInvokeID": "={{ $json.ScarpeInvokeID }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "place",
+              "displayName": "place",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "ScarpeInvokeID",
+              "displayName": "ScarpeInvokeID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "UserID",
+              "displayName": "UserID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        -1600,
+        6768
+      ],
+      "id": "359f0ca5-0df7-4e09-a89d-c1abe8443762",
+      "name": "Call 'Update table with Instagram page'9"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "dfb610dd-d491-45b7-87cd-ac727bc855fc",
+              "name": "output",
+              "value": "={{ $json.output }}",
+              "type": "string"
+            },
+            {
+              "id": "f4d08230-77c5-4353-8438-9c15d196805d",
+              "name": "caption",
+              "value": "={{ $('Run search for type in location on Google search1').item.json.caption }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1088,
+        7232
+      ],
+      "id": "37f658e7-bff0-4802-b1bb-4ae78e1ee6d5",
+      "name": "Edit Fields6"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.places.length }}",
+                    "rightValue": 0,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    },
+                    "id": "29931cd0-2d38-4164-9fd4-4d8f5e1652fc"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "0456d5ca-2bfe-4e1d-9d63-6cd74d4a8b7b",
+                    "leftValue": "={{ $json.places.length }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "ef2ec30a-9f28-4921-ac4f-c7affd7e930b",
+                    "leftValue": "={{ $json.places.length }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "gt"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        672,
+        6608
+      ],
+      "id": "bb991211-bf5d-47fb-9955-8652f81c6dc4",
+      "name": "Switch4"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        896,
+        6432
+      ],
+      "id": "ceaac4d3-8b99-4761-8e43-e2c00f1a8dda",
+      "name": "No Operation, do nothing1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6e440ed2-9d30-43e4-866c-5afa1c927224",
+              "name": "place",
+              "value": "={{ $json.output.parseJson().first() }}",
+              "type": "string"
+            },
+            {
+              "id": "f95749e2-4fcd-4bb8-acde-2686ff983940",
+              "name": "Location",
+              "value": "={{ $('Loop Over Items1').item.json.Location }}",
+              "type": "string"
+            },
+            {
+              "id": "936ce4bd-1e40-4a9b-9e4b-a955c41cedf5",
+              "name": "Type",
+              "value": "={{ $('Loop Over Items1').item.json.Type }}",
+              "type": "string"
+            },
+            {
+              "id": "8e396db1-8d94-41ba-a991-38c3a6ed63d0",
+              "name": "ScarpeInvokeID",
+              "value": "={{ $('Loop Over Items1').item.json.ScarpeInvokeID }}",
+              "type": "string"
+            },
+            {
+              "id": "f74bd387-a583-4e63-b3b0-b65c344c025e",
+              "name": "=UserID",
+              "value": "={{ $('Loop Over Items1').item.json.UserID }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        7472
+      ],
+      "id": "dca8d417-7bfe-43ea-80ba-b6ec76e099f9",
+      "name": "Edit Fields12"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "jmtISFsrzhnL2mcN",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/jmtISFsrzhnL2mcN",
+          "cachedResultName": "Update table with Instagram page"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "place": "={{ $json.place }}",
+            "Location": "={{ $json.Location }}",
+            "Type": "={{ $json.Type }}",
+            "numberOfResults": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+            "Source": "Instagram",
+            "UserID": "={{ $json.UserID }}",
+            "ScarpeInvokeID": "={{ $json.ScarpeInvokeID }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "place",
+              "displayName": "place",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "ScarpeInvokeID",
+              "displayName": "ScarpeInvokeID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "UserID",
+              "displayName": "UserID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        224,
+        7472
+      ],
+      "id": "a356404b-8fd3-4a57-916f-1e3fd888165d",
+      "name": "Call 'Update table with Instagram page'10"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "jmtISFsrzhnL2mcN",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/jmtISFsrzhnL2mcN",
+          "cachedResultName": "Update table with Instagram page"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "place": "={{ $json.place }}",
+            "Location": "={{ $json.Location }}",
+            "Type": "={{ $json.Type }}",
+            "numberOfResults": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+            "Source": "Instagram",
+            "UserID": "={{ $json.UserID }}",
+            "ScarpeInvokeID": "={{ $json.ScarpeInvokeID }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "place",
+              "displayName": "place",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "ScarpeInvokeID",
+              "displayName": "ScarpeInvokeID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "UserID",
+              "displayName": "UserID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        -3296,
+        6512
+      ],
+      "id": "9b7a6c3a-24b4-4d54-8e7a-0edd1bd8ca7e",
+      "name": "Call 'Update table with Instagram page'11"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6e440ed2-9d30-43e4-866c-5afa1c927224",
+              "name": "place",
+              "value": "={{ $('AI Agent2').item.json.output }}",
+              "type": "string"
+            },
+            {
+              "id": "f95749e2-4fcd-4bb8-acde-2686ff983940",
+              "name": "Location",
+              "value": "={{ $('Update row(s)2').item.json.locationName }}",
+              "type": "string"
+            },
+            {
+              "id": "936ce4bd-1e40-4a9b-9e4b-a955c41cedf5",
+              "name": "Type",
+              "value": "={{ $('Update row(s)2').item.json.locationType }}",
+              "type": "string"
+            },
+            {
+              "id": "5572c8b0-d67b-4fe1-bd94-c009a517079f",
+              "name": "ScarpeInvokeID",
+              "value": "={{ $('Update row(s)2').item.json.ScarpeInvokeID }}",
+              "type": "string"
+            },
+            {
+              "id": "12bcf48d-8ea3-4bbf-a46f-5bad048a8fbd",
+              "name": "=UserID",
+              "value": "={{ $('Update row(s)2').item.json.RequestID }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -3520,
+        6064
+      ],
+      "id": "5950a8e0-5f09-4ec8-9b47-62a8992e1ba7",
+      "name": "Edit Fields23"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "value": "HPCu1rkQQL1FPhUm",
+          "mode": "list",
+          "cachedResultName": "placesInfo",
+          "cachedResultUrl": "/projects/m4mqv4uVidZL7jnt/datatables/HPCu1rkQQL1FPhUm"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "instagramProfileUrl",
+              "condition": "ilike",
+              "keyValue": "={{ $json.url }}"
+            },
+            {
+              "keyName": "ScarpeInvokeID",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.ScarpeInvokeID }}"
+            }
+          ]
+        },
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1,
+      "position": [
+        -3296,
+        6800
+      ],
+      "id": "93195309-ef3a-40b1-b032-23433f2a8fc7",
+      "name": "Get row(s)1",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e46480b0-a22a-4bef-a275-b5b9f748ddc6",
+              "leftValue": "={{ $('Get row(s)1').item.json.values().length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -3072,
+        6800
+      ],
+      "id": "638d821e-1eb3-4aa9-abf6-c4af39ecf84f",
+      "name": "If bussiness does not exist on table1",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -2848,
+        7600
+      ],
+      "id": "39a7d04d-8b59-4f12-9c99-d38aa6a95e5e",
+      "name": "No Operation, do nothing3"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "value": "HPCu1rkQQL1FPhUm",
+          "mode": "list",
+          "cachedResultName": "placesInfo",
+          "cachedResultUrl": "/projects/m4mqv4uVidZL7jnt/datatables/HPCu1rkQQL1FPhUm"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "ScarpeInvokeID",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.ScarpeInvokeID }}"
+            },
+            {
+              "keyName": "Type",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.Type }}"
+            },
+            {
+              "keyName": "locationName",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.Location }}"
+            }
+          ]
+        },
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1,
+      "position": [
+        -4992,
+        6256
+      ],
+      "id": "d4b87710-3cf1-42e2-9fd1-761d722469e0",
+      "name": "Get row(s)",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c063c431-aae3-4be7-bb67-e42b9d0646b1",
+              "leftValue": "={{ $json.id.length}}",
+              "rightValue": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -4544,
+        6256
+      ],
+      "id": "4a1521e6-29f1-401c-aefc-63bb94345bcb",
+      "name": "If reached to results number"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "id-1",
+              "name": "place",
+              "value": "={{ JSON.parse($json.content.parts[0].text)[0] }}",
+              "type": "string"
+            },
+            {
+              "id": "id-2",
+              "name": "Location",
+              "value": "={{ $('Loop Over Items1').item.json.Location }}",
+              "type": "string"
+            },
+            {
+              "id": "id-3",
+              "name": "Type",
+              "value": "={{ $('Loop Over Items1').item.json.Type }}",
+              "type": "string"
+            },
+            {
+              "id": "id-4",
+              "name": "ScarpeInvokeID",
+              "value": "={{ $('Loop Over Items1').item.json.ScarpeInvokeID }}",
+              "type": "string"
+            },
+            {
+              "id": "fdc35ce9-4cef-4156-ad72-ead541f52ede",
+              "name": "=UserID",
+              "value": "={{ $('Loop Over Items1').item.json.UserID }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b5475151-d069-4c88-885f-9690144854b8",
+      "name": "Parse Image Places",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        896,
+        6144
+      ]
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "jmtISFsrzhnL2mcN",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/jmtISFsrzhnL2mcN",
+          "cachedResultName": "Update table with Instagram page"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "place": "={{ $json.place }}",
+            "Location": "={{ $json.Location }}",
+            "Type": "={{ $json.Type }}",
+            "numberOfResults": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+            "Source": "Instagram",
+            "UserID": "={{ $json.UserID }}",
+            "ScarpeInvokeID": "={{ $json.ScarpeInvokeID }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "place",
+              "displayName": "place",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "ScarpeInvokeID",
+              "displayName": "ScarpeInvokeID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "UserID",
+              "displayName": "UserID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1120,
+        6224
+      ],
+      "id": "44b7197c-11b8-4ed3-b982-344ff5956f2e",
+      "name": "Call 'Update table with Instagram page'12"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ JSON.parse($json.output.length) }}",
+                    "rightValue": 2,
+                    "operator": {
+                      "type": "number",
+                      "operation": "lte"
+                    },
+                    "id": "29931cd0-2d38-4164-9fd4-4d8f5e1652fc"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "0456d5ca-2bfe-4e1d-9d63-6cd74d4a8b7b",
+                    "leftValue": "={{ $json.output }}",
+                    "rightValue": ",",
+                    "operator": {
+                      "type": "string",
+                      "operation": "notContains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "ef2ec30a-9f28-4921-ac4f-c7affd7e930b",
+                    "leftValue": "={{ $json.output }}",
+                    "rightValue": ",",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        -448,
+        5600
+      ],
+      "id": "c6aba9d5-244e-40f1-9612-a8a6273003c9",
+      "name": "Switch5"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -224,
+        5424
+      ],
+      "id": "c20e8d5f-2eff-4865-990e-3374528ad87f",
+      "name": "No Operation, do nothing5"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "4c79cc7d-2865-4315-9e9e-38988237b9cf",
+              "leftValue": "={{ $json.output }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -3744,
+        6160
+      ],
+      "id": "41cfa5a9-335f-4ffc-9aec-6e5d6d1132df",
+      "name": "If2"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -3520,
+        6256
+      ],
+      "id": "b285387b-6fe8-4a1d-95cf-05edad88cdff",
+      "name": "No Operation, do nothing6"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "2f6169ca-2f7e-4303-9cf4-67ca42a1b1af",
+              "leftValue": "={{ $('Loop Over Items1').item.json.url }}",
+              "rightValue": "=/reel/",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -4032,
+        6544
+      ],
+      "id": "21c9584b-c0b7-469b-bb08-235925668b71",
+      "name": "If3"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -3744,
+        7600
+      ],
+      "id": "854d8af2-f01a-4a3b-9a85-ab9d294669b5",
+      "name": "No Operation, do nothing7"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6e992978-0c17-47d4-94d1-eec4736bc642",
+              "name": "=data",
+              "value": "={{ $('Run search for type in location on Google search1').item.json.caption }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1088,
+        5616
+      ],
+      "id": "9a1ce0fa-5199-49b1-b760-2a55f70df7bc",
+      "name": "Edit Fields9"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "value": "HPCu1rkQQL1FPhUm",
+          "mode": "list",
+          "cachedResultName": "placesInfo",
+          "cachedResultUrl": "/projects/m4mqv4uVidZL7jnt/datatables/HPCu1rkQQL1FPhUm"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "ScarpeInvokeID",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.ScarpeInvokeID }}"
+            },
+            {
+              "keyName": "Type",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.Type }}"
+            },
+            {
+              "keyName": "locationName",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.Location }}"
+            }
+          ]
+        },
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1,
+      "position": [
+        448,
+        5552
+      ],
+      "id": "c2a98e94-f6eb-4446-b9ae-e230c0b22460",
+      "name": "Get row(s)2",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "id"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        -4768,
+        6256
+      ],
+      "id": "96e4d597-5339-4901-b264-ceaf1ae6ac70",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c063c431-aae3-4be7-bb67-e42b9d0646b1",
+              "leftValue": "={{ $json.id.length}}",
+              "rightValue": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        896,
+        5552
+      ],
+      "id": "ac643f7e-bcc1-4789-a922-c08b72e88ab7",
+      "name": "If reached to results number1"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "id"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        672,
+        5552
+      ],
+      "id": "4a658be7-e51d-44dd-92e9-4dc385c19396",
+      "name": "Aggregate1"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "value": "HPCu1rkQQL1FPhUm",
+          "mode": "list",
+          "cachedResultName": "placesInfo",
+          "cachedResultUrl": "/projects/m4mqv4uVidZL7jnt/datatables/HPCu1rkQQL1FPhUm"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "ScarpeInvokeID",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.ScarpeInvokeID }}"
+            },
+            {
+              "keyName": "Type",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.Type }}"
+            },
+            {
+              "keyName": "locationName",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.Location }}"
+            }
+          ]
+        },
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1,
+      "position": [
+        -224,
+        6048
+      ],
+      "id": "2755070e-e239-40e5-a9fe-96b5282a3b0b",
+      "name": "Get row(s)3",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c063c431-aae3-4be7-bb67-e42b9d0646b1",
+              "leftValue": "={{ $json.id.length}}",
+              "rightValue": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        224,
+        6048
+      ],
+      "id": "816f0ced-c3b4-4b24-a5c2-daea7aed804b",
+      "name": "If reached to results number2"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "id"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        0,
+        6048
+      ],
+      "id": "cf413eaf-bb12-4f9b-95d4-88399811ae90",
+      "name": "Aggregate2"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "value": "HPCu1rkQQL1FPhUm",
+          "mode": "list",
+          "cachedResultName": "placesInfo",
+          "cachedResultUrl": "/projects/m4mqv4uVidZL7jnt/datatables/HPCu1rkQQL1FPhUm"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "=ScarpeInvokeID",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.ScarpeInvokeID }}"
+            },
+            {
+              "keyName": "Type",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.Type }}"
+            },
+            {
+              "keyName": "locationName",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.Location }}"
+            }
+          ]
+        },
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1,
+      "position": [
+        672,
+        7152
+      ],
+      "id": "ec4882d9-5310-426d-8bf4-770a1a946498",
+      "name": "Get row(s)4",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c063c431-aae3-4be7-bb67-e42b9d0646b1",
+              "leftValue": "={{ $json.id.length}}",
+              "rightValue": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1120,
+        7152
+      ],
+      "id": "35993feb-19c1-4110-bb14-577a8c953679",
+      "name": "If reached to results number3"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "id"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        896,
+        7152
+      ],
+      "id": "cd61a3bf-2e1d-4ca7-b030-6ba015c16916",
+      "name": "Aggregate3"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "value": "HPCu1rkQQL1FPhUm",
+          "mode": "list",
+          "cachedResultName": "placesInfo",
+          "cachedResultUrl": "/projects/m4mqv4uVidZL7jnt/datatables/HPCu1rkQQL1FPhUm"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "ScarpeInvokeID",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.ScarpeInvokeID }}"
+            },
+            {
+              "keyName": "Type",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.Type }}"
+            },
+            {
+              "keyName": "locationName",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.Location }}"
+            }
+          ]
+        },
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1,
+      "position": [
+        1568,
+        6752
+      ],
+      "id": "0daf7ca8-be36-40da-bb3a-1af7557b0688",
+      "name": "Get row(s)5",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c063c431-aae3-4be7-bb67-e42b9d0646b1",
+              "leftValue": "={{ $json.id.length}}",
+              "rightValue": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2016,
+        6752
+      ],
+      "id": "f65afaa9-6336-4034-945c-8443e91d990c",
+      "name": "If reached to results number4"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "id"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1792,
+        6752
+      ],
+      "id": "2a5a1aa9-f149-40aa-b4ca-53f1d38545e5",
+      "name": "Aggregate4"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "value": "HPCu1rkQQL1FPhUm",
+          "mode": "list",
+          "cachedResultName": "placesInfo",
+          "cachedResultUrl": "/projects/m4mqv4uVidZL7jnt/datatables/HPCu1rkQQL1FPhUm"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "ScarpeInvokeID",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.ScarpeInvokeID }}"
+            },
+            {
+              "keyName": "Type",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.Type }}"
+            },
+            {
+              "keyName": "locationName",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.Location }}"
+            }
+          ]
+        },
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1,
+      "position": [
+        224,
+        7664
+      ],
+      "id": "cc860a5f-f4c4-437e-be46-185ef9a7f359",
+      "name": "Get row(s)6",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c063c431-aae3-4be7-bb67-e42b9d0646b1",
+              "leftValue": "={{ $json.id.length}}",
+              "rightValue": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        672,
+        7664
+      ],
+      "id": "7cbaf9a1-93dd-4df0-bb04-ea2c5fde3c7b",
+      "name": "If reached to results number5"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "id"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        448,
+        7664
+      ],
+      "id": "ae715424-53ba-4355-b485-e26fc63829a1",
+      "name": "Aggregate5"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "IiuviWaaZTkCnanF",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/IiuviWaaZTkCnanF",
+          "cachedResultName": "Update DynamoDB with data"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "numberOfResults": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+            "Location": "={{ $('When Executed by Another Workflow').item.json.Location }}",
+            "Type": "={{ $('When Executed by Another Workflow').item.json.Type }}",
+            "Source": "Instagram",
+            "UserID": "={{ $('When Executed by Another Workflow').item.json.UserID }}",
+            "ScarpeInvokeID": "={{ $('When Executed by Another Workflow').item.json.ScarpeInvokeID }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "ScarpeInvokeID",
+              "displayName": "ScarpeInvokeID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "UserID",
+              "displayName": "UserID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        -4320,
+        6160
+      ],
+      "id": "24a7d7d3-ec69-489b-823c-b921c6b4dc26",
+      "name": "Call 'Update DynamoDB with data'"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "IiuviWaaZTkCnanF",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/IiuviWaaZTkCnanF",
+          "cachedResultName": "Update DynamoDB with data"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "numberOfResults": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+            "Location": "={{ $('When Executed by Another Workflow').item.json.Location }}",
+            "Type": "={{ $('When Executed by Another Workflow').item.json.Type }}",
+            "Source": "Instagram",
+            "UserID": "={{ $('When Executed by Another Workflow').item.json.UserID }}",
+            "ScarpeInvokeID": "={{ $('When Executed by Another Workflow').item.json.ScarpeInvokeID }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "ScarpeInvokeID",
+              "displayName": "ScarpeInvokeID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "UserID",
+              "displayName": "UserID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        -4992,
+        7696
+      ],
+      "id": "e4163cd3-6fba-4e77-aece-a1dfb3f92b7e",
+      "name": "Call 'Update DynamoDB with data'1"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "IiuviWaaZTkCnanF",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/IiuviWaaZTkCnanF",
+          "cachedResultName": "Update DynamoDB with data"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "numberOfResults": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+            "Location": "={{ $('When Executed by Another Workflow').item.json.Location }}",
+            "Type": "={{ $('When Executed by Another Workflow').item.json.Type }}",
+            "Source": "Instagram",
+            "UserID": "={{ $('When Executed by Another Workflow').item.json.UserID }}",
+            "ScarpeInvokeID": "={{ $('When Executed by Another Workflow').item.json.ScarpeInvokeID }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "ScarpeInvokeID",
+              "displayName": "ScarpeInvokeID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "UserID",
+              "displayName": "UserID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        896,
+        7536
+      ],
+      "id": "ffe3373a-a981-45e4-a90d-bbfaab2ae209",
+      "name": "Call 'Update DynamoDB with data'2"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "IiuviWaaZTkCnanF",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/IiuviWaaZTkCnanF",
+          "cachedResultName": "Update DynamoDB with data"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "numberOfResults": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+            "Location": "={{ $('When Executed by Another Workflow').item.json.Location }}",
+            "Type": "={{ $('When Executed by Another Workflow').item.json.Type }}",
+            "Source": "Instagram",
+            "UserID": "={{ $('When Executed by Another Workflow').item.json.UserID }}",
+            "ScarpeInvokeID": "={{ $('When Executed by Another Workflow').item.json.ScarpeInvokeID }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "ScarpeInvokeID",
+              "displayName": "ScarpeInvokeID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "UserID",
+              "displayName": "UserID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1344,
+        7056
+      ],
+      "id": "1fd3a093-b6f7-4bbf-9f6f-aa4c8207ebbc",
+      "name": "Call 'Update DynamoDB with data'3"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "IiuviWaaZTkCnanF",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/IiuviWaaZTkCnanF",
+          "cachedResultName": "Update DynamoDB with data"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "numberOfResults": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+            "Location": "={{ $('When Executed by Another Workflow').item.json.Location }}",
+            "Type": "={{ $('When Executed by Another Workflow').item.json.Type }}",
+            "Source": "Instagram",
+            "UserID": "={{ $('When Executed by Another Workflow').item.json.UserID }}",
+            "ScarpeInvokeID": "={{ $('When Executed by Another Workflow').item.json.ScarpeInvokeID }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "ScarpeInvokeID",
+              "displayName": "ScarpeInvokeID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "UserID",
+              "displayName": "UserID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        2240,
+        6656
+      ],
+      "id": "c3ed85a4-1da2-469c-8e36-76cbab288404",
+      "name": "Call 'Update DynamoDB with data'4"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "IiuviWaaZTkCnanF",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/IiuviWaaZTkCnanF",
+          "cachedResultName": "Update DynamoDB with data"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "numberOfResults": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+            "Location": "={{ $('When Executed by Another Workflow').item.json.Location }}",
+            "Type": "={{ $('When Executed by Another Workflow').item.json.Type }}",
+            "Source": "Instagram",
+            "UserID": "={{ $('When Executed by Another Workflow').item.json.UserID }}",
+            "ScarpeInvokeID": "={{ $('When Executed by Another Workflow').item.json.ScarpeInvokeID }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "ScarpeInvokeID",
+              "displayName": "ScarpeInvokeID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "UserID",
+              "displayName": "UserID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        448,
+        5936
+      ],
+      "id": "798168b0-efbf-431e-af76-8c8a4beec420",
+      "name": "Call 'Update DynamoDB with data'5"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "IiuviWaaZTkCnanF",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/IiuviWaaZTkCnanF",
+          "cachedResultName": "Update DynamoDB with data"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "numberOfResults": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+            "Location": "={{ $('When Executed by Another Workflow').item.json.Location }}",
+            "Type": "={{ $('When Executed by Another Workflow').item.json.Type }}",
+            "Source": "Instagram",
+            "UserID": "={{ $('When Executed by Another Workflow').item.json.UserID }}",
+            "ScarpeInvokeID": "={{ $('When Executed by Another Workflow').item.json.ScarpeInvokeID }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "ScarpeInvokeID",
+              "displayName": "ScarpeInvokeID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "UserID",
+              "displayName": "UserID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1120,
+        5456
+      ],
+      "id": "aac7e001-8e57-4e9a-bc24-4b7b6c738b90",
+      "name": "Call 'Update DynamoDB with data'6"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fe71a531-772a-4a64-b273-ead6dc18da27",
+              "name": "=data",
+              "value": "={{ $('Run search for type in location on Google search').item.json }}",
+              "type": "object"
+            },
+            {
+              "id": "50b02e66-2ed1-4354-a714-23aaf76a6d05",
+              "name": "=Location",
+              "value": "={{ $('When Executed by Another Workflow').item.json.Location }}",
+              "type": "string"
+            },
+            {
+              "id": "3e8b56a2-32b8-4172-b394-66eac3c370d1",
+              "name": "=Type",
+              "value": "={{ $('When Executed by Another Workflow').item.json.Type }}",
+              "type": "string"
+            },
+            {
+              "id": "dfd64438-f433-4bc9-adcc-20137bbd3e36",
+              "name": "=ScarpeInvokeID",
+              "value": "={{ $('When Executed by Another Workflow').item.json.ScarpeInvokeID }}",
+              "type": "string"
+            },
+            {
+              "id": "8bf2fdff-a3ad-4f8c-b115-bf85079bbcab",
+              "name": "=numberOfResults",
+              "value": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+              "type": "string"
+            },
+            {
+              "id": "000136be-9e91-4716-ab8b-09f7acd1bf3e",
+              "name": "=UserID",
+              "value": "={{ $('When Executed by Another Workflow').item.json.UserID }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -5648,
+        8512
+      ],
+      "id": "ce70befa-5019-4a98-9757-aa0b6a9e8273",
+      "name": "Edit Fields10"
+    }
+  ],
+  "pinData": {},
+  "repo_name": "lost-scraping",
+  "repo_owner": "trendlyorg",
+  "repo_path": "workflows/",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-11-26T05:39:10.218Z",
+      "createdAt": "2025-11-26T05:39:10.218Z",
+      "role": "workflow:owner",
+      "workflowId": "iV8ZBQIeXVdcX8ir",
+      "projectId": "m4mqv4uVidZL7jnt"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-28T04:24:31.000Z",
+  "versionId": "aa09ef65-c0f0-4105-81b8-9dad35fc8567"
+}
