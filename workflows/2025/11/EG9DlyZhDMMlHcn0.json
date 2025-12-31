@@ -1,0 +1,1089 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "Some Options for the search": {
+      "main": [
+        [
+          {
+            "node": "AI Output + Prev Data",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop over each profile1": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Check place on Google maps",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Output + Prev Data": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upsert final place": {
+      "main": [
+        []
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "AI Output + Prev Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check place on Google maps": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "Upsert row to final table",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Summarize",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Code in Python (Native) (Beta)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upsert row to final table": {
+      "main": [
+        [
+          {
+            "node": "Loop over each profile1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing": {
+      "main": [
+        [
+          {
+            "node": "Loop over each profile1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Some Options for the search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Upsert final place",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Summarize": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        [
+          {
+            "node": "Create an object",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in Python (Native) (Beta)": {
+      "main": [
+        [
+          {
+            "node": "Create or update an item",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-26T05:39:49.825Z",
+  "id": "EG9DlyZhDMMlHcn0",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Reviews Scarping",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -560,
+        1952
+      ],
+      "id": "1583d916-177d-4bb4-8833-c2789fde7b44",
+      "name": "Loop over each profile1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9f9ce88a-a24a-4a27-8b25-25ee85e730d6",
+              "name": "Role & Flavor",
+              "type": "string",
+              "value": "You are a \"Critical Scoring Engine.\" Your flavor is precise, analytical, and realistic. Your goal is to differentiate between *explicitly earned* high scores and *passively inferred* high scores."
+            },
+            {
+              "id": "387a9a8f-0220-4285-8633-d7facde7d460",
+              "name": "Core Task & Logic",
+              "value": "Your task is to output a complete JSON. You *must* follow this **Scoring Hierarchy**: 1.  **Explicit Score:** Score (1-5) based on *direct text evidence*. (e.g., \"excellent service\" = 5, \"bad service\" = 1). 2.  **Inferred Score:** If a topic is *not mentioned*, you *must* infer a score based on the stars. 3.  **CRITICAL INFERENCE RULE:** Your inferred score must be **one step below** the overall star rating.     * 5-star review (no mention) -> infer a '4'.     * 4-star review (no mention) -> infer a '3'.     * 3-star review (no mention) -> infer a '2'.     * 1 or 2-star review (no mention) -> infer a '1'.",
+              "type": "string"
+            },
+            {
+              "id": "fc78595c-c70b-489f-b5bb-960781b70009",
+              "name": "Boundaries & Constraints",
+              "value": "ERROR 01: Do not invent *text* data. ERROR 02: Do not output *any* text except the raw JSON. ERROR 03: `NULL_SCORE` is a critical failure. You must impute a realistic, *graded* value based on the Hierarchy.",
+              "type": "string"
+            },
+            {
+              "id": "89aa543f-569c-4ed2-b4b5-240cf443343d",
+              "name": "Non-Negotiable Output",
+              "value": "A single, complete, raw JSON object.",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "46fd978f-16d6-4535-8c84-d9b0cbcaaeb8",
+      "name": "Some Options for the search",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        -560,
+        1360
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "id": "a9083a44-4ffc-4f31-8068-a9d9c81dc615",
+      "name": "AI Output + Prev Data",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        16,
+        1360
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "dataTableId": {
+          "__rl": true,
+          "value": "nlqkoELmxxHb18oD",
+          "mode": "list",
+          "cachedResultName": "placesReview",
+          "cachedResultUrl": "/projects/m4mqv4uVidZL7jnt/datatables/nlqkoELmxxHb18oD"
+        },
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "updatedAt",
+              "condition": "gt",
+              "keyValue": "={{ $now }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "score_value": "={{ $json.output.score_value }}",
+            "score_atmosphere": "={{ $json.output.score_atmosphere }}",
+            "score_service": "={{ $json.output.score_service }}",
+            "score_food": "={{ $json.output.score_food }}",
+            "placeId": "={{ $json.output.placeId }}",
+            "title": "={{ $json.output.title }}",
+            "summary": "={{ $json.output.summary }}",
+            "sentiment": "={{ $json.output.sentiment }}",
+            "topics": "={{ $json.output.topics }}",
+            "positive_points": "={{ $json.output.positive_points }}",
+            "negative_points": "={{ $json.output.negative_points }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "placeId",
+              "displayName": "placeId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "summary",
+              "displayName": "summary",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "sentiment",
+              "displayName": "sentiment",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "topics",
+              "displayName": "topics",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "positive_points",
+              "displayName": "positive_points",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "negative_points",
+              "displayName": "negative_points",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "score_food",
+              "displayName": "score_food",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "score_service",
+              "displayName": "score_service",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "score_atmosphere",
+              "displayName": "score_atmosphere",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "score_value",
+              "displayName": "score_value",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1,
+      "position": [
+        464,
+        1360
+      ],
+      "id": "b4c5dc77-8911-48e5-ad87-1d181d7ac2a3",
+      "name": "Upsert final place"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Analyze the following review and provide the output in the specified *flat* JSON format. Follow the Scoring Hierarchy: score based on text first, otherwise, infer the score as *one step below* the overall star rating.\n\n**Review Data:**\n* **placeId:** {{ $json.placeId }}\n* **title:** {{ $json.title }}\n* **Text:** {{ $json.reviews[0].text }}\n* **Stars:** {{ $json.reviews[0].stars }}\n* **Is Local Guide:** {{ $json.reviews[0].isLocalGuide }}\n* **Reviewer's Total Reviews:** {{ $json.reviews[0].reviewerNumberOfReviews }}\n* **Helpful Likes Count:** {{ $json.reviews[0].likesCount }}\n\n**Required JSON Output Format:**\n{\n  \"placeId\": \"The 'placeId' from the input data\",\n  \"title\": \"The 'title' (name of the place) from the input data\",\n  \"summary\": \"A one-sentence summary of the reviewer's core feedback.\",\n  \"sentiment\": \"Positive | Negative | Neutral | Mixed\",\n  \"topics\": \"A single, comma-separated string of key topics (e.g., 'food, service'). Use 'N/A' if none.\",\n  \"positive_points\": \"A single string of positive points, separated by a pipe '|'. Use 'N/A' if none.\",\n  \"negative_points\": \"A single string of negative points, separated by a pipe '|'. Use 'N/A' if none.\",\n  \"score_food\": \"A 1-5 score. Score 1 step below stars if not mentioned.\",\n  \"score_service\": \"A 1-5 score. Score 1 step below stars if not mentioned.\",\n  \"score_atmosphere\": \"A 1-5 score. Score 1 step below stars if not mentioned.\",\n  \"score_value\": \"A 1-5 score. Score 1 step below stars if not mentioned.\"\n}",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        -336,
+        1248
+      ],
+      "id": "2f2c6ffc-de2b-4c95-8673-34d664eaf149",
+      "name": "AI Agent",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -336,
+        1472
+      ],
+      "id": "f574b821-be88-4eba-96e3-1d8994dfc9da",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "YXrAUY1bjwbH5FBX",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"required\": [\n    \"placeId\",\n    \"title\",\n    \"summary\",\n    \"sentiment\",\n    \"topics\",\n    \"positive_points\",\n    \"negative_points\",\n    \"score_food\",\n    \"score_service\",\n    \"score_atmosphere\",\n    \"score_value\"\n  ],\n  \"properties\": {\n    \"placeId\": {\n      \"type\": \"string\",\n      \"description\": \"The 'placeId' from the input data\"\n    },\n    \"title\": {\n      \"type\": \"string\",\n      \"description\": \"The 'title' (name of the place) from the input data\"\n    },\n    \"summary\": {\n      \"type\": \"string\",\n      \"description\": \"A one-sentence summary of the reviewer's core feedback.\"\n    },\n    \"sentiment\": {\n      \"type\": \"string\",\n      \"description\": \"The overall sentiment of the review text.\",\n      \"enum\": [\"Positive\", \"Negative\", \"Neutral\", \"Mixed\"]\n    },\n    \"topics\": {\n      \"type\": \"string\",\n      \"description\": \"A single, comma-separated string of key topics (e.g., 'food, service'). Use 'N/A' if none.\"\n    },\n    \"positive_points\": {\n      \"type\": \"string\",\n      \"description\": \"A single string of positive points, separated by a pipe '|'. Use 'N/A' if none.\"\n    },\n    \"negative_points\": {\n      \"type\": \"string\",\n      \"description\": \"A single string of negative points, separated by a pipe '|'. Use 'N/a' if none.\"\n    },\n    \"score_food\": {\n      \"type\": \"string\",\n      \"description\": \"A 1-5 score. Infer from context if not mentioned.\"\n    },\n    \"score_service\": {\n      \"type\": \"string\",\n      \"description\": \"A 1-5 score. Infer from context if not mentioned.\"\n    },\n    \"score_atmosphere\": {\n      \"type\": \"string\",\n      \"description\": \"A 1-5 score. Infer from context if not mentioned.\"\n    },\n    \"score_value\": {\n      \"type\": \"string\",\n      \"description\": \"A 1-5 score. Infer from context if not mentioned.\"\n    }\n  }\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -208,
+        1472
+      ],
+      "id": "c0bbc983-1c2f-4ac9-93d1-d25a436a5cdd",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "operation": "Run actor and get dataset",
+        "actorSource": "store",
+        "actorId": {
+          "__rl": true,
+          "value": "nwua9Gu5YrADL7ZDj",
+          "mode": "list",
+          "cachedResultName": "Google Maps Scraper (compass/crawler-google-places)",
+          "cachedResultUrl": "https://console.apify.com/actors/nwua9Gu5YrADL7ZDj/input"
+        },
+        "customBody": "={\n  \"allPlacesNoAction\": \"\",\n  \"includeWebResults\": false,\n  \"language\": \"en\",\n  \"locationQuery\": \"{{ $json.locationName }}\",\n  \"maxCrawledPlacesPerSearch\": 1,\n  \"maxImages\": 0,\n  \"maxQuestions\": 0,\n  \"maxReviews\": 15,\n  \"maximumLeadsEnrichmentRecords\": 0,\n  \"reviewsOrigin\": \"all\",\n  \"reviewsSort\": \"newest\",\n  \"scrapeContacts\": false,\n  \"scrapeDirectories\": false,\n  \"scrapeImageAuthors\": false,\n  \"scrapePlaceDetailPage\": true,\n  \"scrapeReviewsPersonalData\": false,\n  \"scrapeTableReservationProvider\": false,\n  \"searchMatching\": \"all\",\n  \"searchStringsArray\": [\n    \"{{ $json.fullName }}\"\n  ],\n  \"skipClosedPlaces\": false,\n  \"website\": \"allPlaces\",\n  \"placeMinimumStars\": \"\",\n  \"reviewsFilterString\": \"\",\n  \"allPlacesNoSearchAction\": \"\"\n}"
+      },
+      "type": "@apify/n8n-nodes-apify.apify",
+      "typeVersion": 1,
+      "position": [
+        -272,
+        2016
+      ],
+      "id": "7f824ef2-f5d8-4c79-860b-ec35d1162eec",
+      "name": "Check place on Google maps",
+      "credentials": {
+        "apifyApi": {
+          "id": "B45wSCvg3xLaLVQ6",
+          "name": "Apify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "3422bb2a-aac3-47bb-9d8b-ee4cae4ced96",
+              "leftValue": "={{ $json.permanentlyClosed }}",
+              "rightValue": "error",
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1008,
+        1760
+      ],
+      "id": "e90cf6eb-198d-4c59-b8ba-d3d59c2b8bb8",
+      "name": "If3"
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "dataTableId": {
+          "__rl": true,
+          "value": "hV4xg1aXGmO8LMge",
+          "mode": "list",
+          "cachedResultName": "placesFinal",
+          "cachedResultUrl": "/projects/m4mqv4uVidZL7jnt/datatables/hV4xg1aXGmO8LMge"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "permanentlyClosed",
+              "condition": "isFalse"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "postalCode": "={{ $json.postalCode }}",
+            "totalScore": "={{ $json.totalScore }}",
+            "reviewsCount": "={{ $json.reviewsCount }}",
+            "imagesCount": "={{ $json.imagesCount }}",
+            "placeId": "={{ $json.placeId }}",
+            "fullName": "={{ $json.title }}",
+            "city": "={{ $json.city }}",
+            "street": "={{ $json.street }}",
+            "address": "={{ $json.address }}",
+            "state": "={{ $json.state }}",
+            "price": "={{ $json.price }}",
+            "countryCode": "={{ $json.countryCode }}",
+            "phone": "={{ $json.phoneUnformatted }}",
+            "menu": "={{ $json.menu }}",
+            "website": "={{ $json.website }}",
+            "categoryName": "={{ $json.categoryName }}",
+            "googleMapsUrl": "={{ $json.url }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "placeId",
+              "displayName": "placeId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "fullName",
+              "displayName": "fullName",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "categoryName",
+              "displayName": "categoryName",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "googleMapsUrl",
+              "displayName": "googleMapsUrl",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "city",
+              "displayName": "city",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "street",
+              "displayName": "street",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "address",
+              "displayName": "address",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "state",
+              "displayName": "state",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "price",
+              "displayName": "price",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "countryCode",
+              "displayName": "countryCode",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "postalCode",
+              "displayName": "postalCode",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "phone",
+              "displayName": "phone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "menu",
+              "displayName": "menu",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "website",
+              "displayName": "website",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "totalScore",
+              "displayName": "totalScore",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "reviewsCount",
+              "displayName": "reviewsCount",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "imagesCount",
+              "displayName": "imagesCount",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "permanentlyClosed",
+              "displayName": "permanentlyClosed",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "boolean",
+              "readOnly": false,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1,
+      "position": [
+        -784,
+        1856
+      ],
+      "id": "c8817726-dff2-4b6f-8ea7-cb4cb30e0542",
+      "name": "Upsert row to final table",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -784,
+        2048
+      ],
+      "id": "c87290ab-a6c8-4fb1-aaad-e8c510f452af",
+      "name": "No Operation, do nothing",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "acbde20b-9176-47e0-8501-eb91ce875f49",
+              "name": "title",
+              "value": "={{ $json.title }}",
+              "type": "string"
+            },
+            {
+              "id": "1199872f-8cd3-44a9-9c3d-91d19357fff4",
+              "name": "placeId",
+              "value": "={{ $json.placeId }}",
+              "type": "string"
+            },
+            {
+              "id": "782b0d2c-833f-43f4-b6a8-7799b83f9873",
+              "name": "reviews",
+              "value": "={{ $json.reviews }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -784,
+        1360
+      ],
+      "id": "4ed06494-4ee0-4c0c-a3c6-541c721e385b",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2f2c097d-9a59-45db-93f9-154a6ba8631d",
+              "name": "output",
+              "value": "={{ $json.output }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        240,
+        1360
+      ],
+      "id": "a9ff3010-670d-44a6-b4a9-c5a61ddbddc0",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "options": {
+          "fileName": "={{ $json.placeId }}",
+          "headerRow": true
+        }
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        -272,
+        1664
+      ],
+      "id": "ba36a928-7304-4790-9a2a-90dd32c3d987",
+      "name": "Convert to File",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "fieldsToSummarize": {
+          "values": [
+            {
+              "aggregation": "append",
+              "field": "location"
+            },
+            {
+              "aggregation": "append",
+              "field": "title"
+            },
+            {
+              "aggregation": "append",
+              "field": "categories"
+            },
+            {
+              "aggregation": "append",
+              "field": "address"
+            },
+            {
+              "aggregation": "append",
+              "field": "placeId"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.summarize",
+      "typeVersion": 1.1,
+      "position": [
+        -784,
+        1664
+      ],
+      "id": "4d238a79-d6f7-4597-84b2-17d95aba1f15",
+      "name": "Summarize"
+    },
+    {
+      "parameters": {
+        "resource": "object",
+        "operation": "create",
+        "bucketName": "lost_datasets",
+        "objectName": "=",
+        "createData": {},
+        "createQuery": {},
+        "encryptionHeaders": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.googleCloudStorage",
+      "typeVersion": 1,
+      "position": [
+        240,
+        1664
+      ],
+      "id": "472afde3-f665-4a91-a7e0-c674a91fd64a",
+      "name": "Create an object",
+      "credentials": {
+        "googleCloudStorageOAuth2Api": {
+          "id": "2bN6QUxV6rWZWQBg",
+          "name": "Google Cloud Storage account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e2bbac61-07f9-4a2f-8628-d3b71efc7017",
+              "name": "lat",
+              "value": "={{ $json.appended_location[0].lat }}",
+              "type": "number"
+            },
+            {
+              "id": "081907e9-89d4-4cca-9927-09855f96d0ca",
+              "name": "lng",
+              "value": "={{ $json.appended_location[0].lng }}",
+              "type": "string"
+            },
+            {
+              "id": "a361948e-6c99-4930-90d2-01d2a2cd5f79",
+              "name": "title",
+              "value": "={{ $json.appended_title[0] }}",
+              "type": "string"
+            },
+            {
+              "id": "93228460-7868-4f1c-a994-58cbd96802da",
+              "name": "address",
+              "value": "={{ $json.appended_address }}",
+              "type": "string"
+            },
+            {
+              "id": "c2503ac5-2bcf-4557-9a53-caf955f2610b",
+              "name": "categories",
+              "value": "={{ $json.appended_categories }}",
+              "type": "string"
+            },
+            {
+              "id": "b219c943-71c5-4a4a-a38a-b339cfd31d24",
+              "name": "placeId",
+              "value": "={{ $json.appended_placeId }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -560,
+        1664
+      ],
+      "id": "8165c44b-4b67-41ac-88ea-9a30db42f9b4",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        16,
+        1664
+      ],
+      "id": "a94c04e3-b85b-4a34-969d-da50fe011849",
+      "name": "Edit Fields3"
+    },
+    {
+      "parameters": {
+        "tableName": "trendly-development-places-table",
+        "dataToSend": "autoMapInputData",
+        "inputsToIgnore": "=",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.awsDynamoDb",
+      "typeVersion": 1,
+      "position": [
+        -560,
+        1168
+      ],
+      "id": "96c6f69e-7b82-4c4c-8c2b-d52df7b4b5c9",
+      "name": "Create or update an item",
+      "credentials": {
+        "aws": {
+          "id": "nt5J8Jtb8JM9PCYe",
+          "name": "AWS account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "language": "pythonNative",
+        "pythonCode": "data = $input.all()[0]['json']\n\nstringify_fields = [\n    'location', 'categories', 'reviewsDistribution', 'imageCategories',\n    'hotelAds', 'openingHours', 'peopleAlsoSearch', 'placesTags', \n    'reviewsTags', 'additionalInfo', 'gasPrices', 'questionsAndAnswers',\n    'updatesFromCustomers', 'webResults', 'tableReservationLinks',\n    'bookingLinks', 'orderBy', 'restaurantData', 'ownerUpdates',\n    'imageUrls', 'reviews', 'leadsEnrichment'\n]\n\nresult = {}\nfor key, value in data.items():\n    if key in stringify_fields and value is not None:\n        result[key] = str(value).replace(\"'\", '\"')\n    else:\n        result[key] = str(value) if value is not None else \"\"\n\nreturn [result]\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -784,
+        1168
+      ],
+      "id": "3c25e96c-270d-482e-8919-93f29dc94644",
+      "name": "Code in Python (Native) (Beta)"
+    }
+  ],
+  "pinData": {},
+  "repo_name": "lost-scraping",
+  "repo_owner": "trendlyorg",
+  "repo_path": "workflows/",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-11-26T05:39:49.827Z",
+      "createdAt": "2025-11-26T05:39:49.827Z",
+      "role": "workflow:owner",
+      "workflowId": "EG9DlyZhDMMlHcn0",
+      "projectId": "m4mqv4uVidZL7jnt"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-11-26T07:56:01.000Z",
+  "versionId": "12a85370-b13d-4364-9d0a-5ef76d8c25ed"
+}
