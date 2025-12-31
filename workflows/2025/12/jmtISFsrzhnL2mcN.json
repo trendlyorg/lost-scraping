@@ -1,0 +1,1465 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Get row(s)2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run search for type in location on Google search2": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields6": {
+      "main": [
+        [
+          {
+            "node": "Get row(s)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s)": {
+      "main": [
+        [
+          {
+            "node": "If bussiness does not exist on table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If bussiness does not exist on table": {
+      "main": [
+        [
+          {
+            "node": "Upsert row to final table3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Run search for type in location on Google search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run search for type in location on Google search": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model12": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent12",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent12": {
+      "main": [
+        [
+          {
+            "node": "If relevant",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If relevant": {
+      "main": [
+        [
+          {
+            "node": "Run search for type in location on Google search2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run search for type in location on Google search3": {
+      "main": [
+        [
+          {
+            "node": "Get row(s)3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "AI Agent12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If bussiness does not exist on table1": {
+      "main": [
+        [
+          {
+            "node": "Run search for type in location on Google search3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent13",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent13": {
+      "main": [
+        [
+          {
+            "node": "If bussiness does not exist on table1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s)1": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s)2": {
+      "main": [
+        [
+          {
+            "node": "Aggregate1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate1": {
+      "main": [
+        [
+          {
+            "node": "If reached to results number",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If reached to results number": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Get row(s)1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s)3": {
+      "main": [
+        [
+          {
+            "node": "If place id not exists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If place id not exists": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-08T06:01:57.397Z",
+  "id": "jmtISFsrzhnL2mcN",
+  "isArchived": false,
+  "meta": null,
+  "name": "Update table with Instagram page",
+  "nodes": [
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "place"
+            },
+            {
+              "name": "Location"
+            },
+            {
+              "name": "Type"
+            },
+            {
+              "name": "ScarpeInvokeID"
+            },
+            {
+              "name": "numberOfResults",
+              "type": "number"
+            },
+            {
+              "name": "Source"
+            },
+            {
+              "name": "UserID"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -8784,
+        416
+      ],
+      "id": "558ce28f-d02b-4a81-ba1c-8283dd17209e",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -4880,
+        352
+      ],
+      "id": "cd923322-e846-43b4-8f57-df0a28876eaa",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "YXrAUY1bjwbH5FBX",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Here is the JSON data to analyze:\n{{ JSON.stringify($json) }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=You are a precise URL Extraction Engine. Your task is to output the single best official Instagram profile URL based on the search results.\n\n### Extraction Logic\n1. **Analyze Search:** Identify the Target Business Name and Location from `searchQuery.term`.\n2. **Find Profile:**\n   - **Scenario A (Best):** A result is a direct profile URL (`instagram.com/username/`) and matches the business.\n   - **Scenario B (Reconstruction):** A result is a Post (`/p/`) or Reel (`/reel/`) by the business.\n     - Look at the `snippet`, `title`, or `displayedUrl` for the handle (e.g., \"Instagram › colorfulhut\" or \"@colorfulhut\").\n     - **ACTION:** Extract the handle and construct the main profile URL: `https://www.instagram.com/handle/`.\n\n### Strict Constraints\n- **DO NOT** return a specific post URL (e.g., `.../p/ID`). Always convert it to the main profile URL.\n- **DO NOT** return aggregator URLs (TripAdvisor, etc.).\n- **DO NOT** include any explanation, JSON formatting, or markdown.\n\n### Input Data\n{{ JSON.stringify($json) }}\n\n### Output Requirement\nReturn ONLY the raw URL string (e.g., https://www.instagram.com/username/).\nIf no valid profile is found, return the word: null"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        -4944,
+        128
+      ],
+      "id": "d3d8bc9a-7131-4d8e-9a92-d0f84876f75f",
+      "name": "AI Agent1",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "Run actor and get dataset",
+        "actorSource": "store",
+        "actorId": {
+          "__rl": true,
+          "value": "nFJndFXA5zjCTuudP",
+          "mode": "list",
+          "cachedResultName": "Google Search Results Scraper (apify/google-search-scraper)",
+          "cachedResultUrl": "https://console.apify.com/actors/nFJndFXA5zjCTuudP/input"
+        },
+        "customBody": "={\n  \"aiMode\": \"aiModeOff\",\n  \"focusOnPaidAds\": false,\n  \"forceExactMatch\": false,\n  \"includeIcons\": false,\n  \"includeUnfilteredResults\": false,\n  \"maxPagesPerQuery\": 1,\n  \"maximumLeadsEnrichmentRecords\": 0,\n  \"mobileResults\": false,\n  \"queries\": \"{{ $json.output.parseJson().name }} {{ $json.output.parseJson().input_location }} -inurl:explore -inurl:tags\",\n  \"resultsPerPage\": 10,\n  \"saveHtml\": false,\n  \"saveHtmlToKeyValueStore\": true,\n  \"searchLanguage\": \"en\",\n  \"site\": \"instagram.com\",\n  \"languageCode\": \"\",\n  \"wordsInTitle\": [],\n  \"wordsInText\": [],\n  \"wordsInUrl\": []\n}"
+      },
+      "type": "@apify/n8n-nodes-apify.apify",
+      "typeVersion": 1,
+      "position": [
+        -5168,
+        128
+      ],
+      "id": "d7349bfb-3a90-4bbb-b6d4-e20231c717ad",
+      "name": "Run search for type in location on Google search2",
+      "credentials": {
+        "apifyApi": {
+          "id": "B45wSCvg3xLaLVQ6",
+          "name": "Apify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6e440ed2-9d30-43e4-866c-5afa1c927224",
+              "name": "instagramProfileUrl",
+              "value": "={{ $json.output }}",
+              "type": "string"
+            },
+            {
+              "id": "f95749e2-4fcd-4bb8-acde-2686ff983940",
+              "name": "Location",
+              "value": "={{ $('When Executed by Another Workflow').item.json.Location }}",
+              "type": "string"
+            },
+            {
+              "id": "936ce4bd-1e40-4a9b-9e4b-a955c41cedf5",
+              "name": "Type",
+              "value": "={{ $('When Executed by Another Workflow').item.json.Type }}",
+              "type": "string"
+            },
+            {
+              "id": "8d5d091d-3b50-4bab-9566-d769defb940c",
+              "name": "fullName",
+              "value": "={{ $('When Executed by Another Workflow').item.json.place }}",
+              "type": "string"
+            },
+            {
+              "id": "c3538e86-32fd-441d-994e-a8b294848110",
+              "name": "ScarpeInvokeID",
+              "value": "={{ $('When Executed by Another Workflow').item.json.ScarpeInvokeID }}",
+              "type": "string"
+            },
+            {
+              "id": "cdcd8e54-554b-4605-9f55-c53764ff2de7",
+              "name": "Source",
+              "value": "={{ $('When Executed by Another Workflow').item.json.Source }}",
+              "type": "string"
+            },
+            {
+              "id": "bad78eb1-59bb-479a-ab9f-f917239a1717",
+              "name": "=UserID",
+              "value": "={{ $('When Executed by Another Workflow').item.json.UserID }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -3568,
+        32
+      ],
+      "id": "db99bfde-43fb-43ae-a864-a70defb6ea8e",
+      "name": "Edit Fields6"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "value": "HPCu1rkQQL1FPhUm",
+          "mode": "list",
+          "cachedResultName": "placesInfo",
+          "cachedResultUrl": "/projects/m4mqv4uVidZL7jnt/datatables/HPCu1rkQQL1FPhUm"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "instagramProfileUrl",
+              "condition": "ilike",
+              "keyValue": "={{ $json.instagramProfileUrl }}"
+            },
+            {
+              "keyName": "ScarpeInvokeID",
+              "condition": "ilike",
+              "keyValue": "={{ $json.ScarpeInvokeID }}"
+            }
+          ]
+        },
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1,
+      "position": [
+        -3344,
+        32
+      ],
+      "id": "eddca84d-213b-4fa4-8bb0-b11615823f8e",
+      "name": "Get row(s)",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "dataTableId": {
+          "__rl": true,
+          "value": "HPCu1rkQQL1FPhUm",
+          "mode": "list",
+          "cachedResultName": "placesInfo",
+          "cachedResultUrl": "/projects/m4mqv4uVidZL7jnt/datatables/HPCu1rkQQL1FPhUm"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "fullName": "={{ $('Edit Fields6').item.json.fullName }}",
+            "instagramProfileUrl": "={{ $('Edit Fields6').item.json.instagramProfileUrl }}",
+            "locationName": "={{ $('Edit Fields6').item.json.Location }}",
+            "Type": "={{ $('Edit Fields6').item.json.Type }}",
+            "price": "={{ $('Run search for type in location on Google search3').item.json.price }}",
+            "address": "={{ $('Run search for type in location on Google search3').item.json.address }}",
+            "location": "={{ JSON.stringify($('Run search for type in location on Google search3').item.json.location) }}",
+            "totalScore": "={{ $('Run search for type in location on Google search3').item.json.totalScore }}",
+            "openingHours": "={{ JSON.stringify($('Run search for type in location on Google search3').item.json.openingHours) }}",
+            "imageUrl": "={{ $('Run search for type in location on Google search3').item.json.imageUrl }}",
+            "placeId": "={{ $('Run search for type in location on Google search3').item.json.placeId }}",
+            "Source": "={{ $('Edit Fields6').item.json.Source }}",
+            "additionalInfo": "={{ JSON.stringify($('Run search for type in location on Google search3').item.json.additionalInfo) }}",
+            "UserID": "={{ $('Edit Fields6').item.json.UserID }}",
+            "searchPageUrl": "={{ JSON.stringify($('Run search for type in location on Google search3').item.json.searchPageUrl) }}",
+            "ScarpeInvokeID": "={{ $('Edit Fields6').item.json.ScarpeInvokeID }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "placeId",
+              "displayName": "placeId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "fullName",
+              "displayName": "fullName",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "locationName",
+              "displayName": "locationName",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "instagramProfileUrl",
+              "displayName": "instagramProfileUrl",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "price",
+              "displayName": "price",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "address",
+              "displayName": "address",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "location",
+              "displayName": "location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "totalScore",
+              "displayName": "totalScore",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "openingHours",
+              "displayName": "openingHours",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "imageUrl",
+              "displayName": "imageUrl",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "additionalInfo",
+              "displayName": "additionalInfo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "UserID",
+              "displayName": "UserID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "searchPageUrl",
+              "displayName": "searchPageUrl",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "ScarpeInvokeID",
+              "displayName": "ScarpeInvokeID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1,
+      "position": [
+        -2896,
+        -64
+      ],
+      "id": "0f0df5c0-eece-4f60-9d4b-5d4576858f48",
+      "name": "Upsert row to final table3",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -2896,
+        128
+      ],
+      "id": "3058c3a8-c6d4-487e-89ae-0dafb2f452eb",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e46480b0-a22a-4bef-a275-b5b9f748ddc6",
+              "leftValue": "={{ $('Get row(s)').item.json.values().length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -3120,
+        32
+      ],
+      "id": "2437e2b0-6b43-48e2-bc9f-ac0bdff46557",
+      "name": "If bussiness does not exist on table",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "62e37616-92fc-4014-8e13-ec93847c8468",
+              "leftValue": "={{ $json.output }}",
+              "rightValue": "null",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -4592,
+        128
+      ],
+      "id": "ade0e467-047f-4bec-ac2d-3c52892f7c48",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "operation": "Run actor and get dataset",
+        "actorSource": "store",
+        "actorId": {
+          "__rl": true,
+          "value": "nFJndFXA5zjCTuudP",
+          "mode": "list",
+          "cachedResultName": "Google Search Results Scraper (apify/google-search-scraper)",
+          "cachedResultUrl": "https://console.apify.com/actors/nFJndFXA5zjCTuudP/input"
+        },
+        "customBody": "={\n  \"aiMode\": \"aiModeOff\",\n  \"focusOnPaidAds\": false,\n  \"forceExactMatch\": false,\n  \"includeIcons\": false,\n  \"includeUnfilteredResults\": false,\n  \"maxPagesPerQuery\": 1,\n  \"maximumLeadsEnrichmentRecords\": 0,\n  \"mobileResults\": false,\n  \"queries\": \"{{ $('When Executed by Another Workflow').item.json.place }} {{ $('When Executed by Another Workflow').item.json.Location }} Maps Tripadvisor Official\",\n  \"resultsPerPage\": 5,\n  \"saveHtml\": false,\n  \"saveHtmlToKeyValueStore\": true,\n  \"searchLanguage\": \"en\",\n  \"languageCode\": \"\",\n  \"wordsInTitle\": [],\n  \"wordsInText\": [],\n  \"wordsInUrl\": []\n}"
+      },
+      "type": "@apify/n8n-nodes-apify.apify",
+      "typeVersion": 1,
+      "position": [
+        -4368,
+        256
+      ],
+      "id": "8a63d25e-6257-4e3e-8d23-18c5e82cc9f4",
+      "name": "Run search for type in location on Google search",
+      "credentials": {
+        "apifyApi": {
+          "id": "B45wSCvg3xLaLVQ6",
+          "name": "Apify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Here is the JSON data to analyze:\n{{ JSON.stringify($json) }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=You are a precise URL Extraction Engine. Your task is to output the single best official business URL based on the search results.\n\n### Extraction Logic\n1. **Analyze Search:** Identify the Target Business Name and Location from `searchQuery.term`.\n2. **Target Priority:**\n   - **Scenario A (Best):** A result is a direct, official **Instagram profile URL** (`instagram.com/username/`) that matches the business.\n   - **Scenario B (Reconstruction):** A result is an Instagram Post (`/p/`) or Reel (`/reel/`).\n     - **ACTION:** Extract the handle and construct the main profile URL: `https://www.instagram.com/handle/`.\n   - **Scenario C (Fallback - Maps/Official):** If no valid Instagram profile is found, search for the best official **Google Maps URL** or the business's official website URL. (This scenario applies mainly to the fallback search results).\n\n### Strict Constraints\n- **DO NOT** return a specific post URL or reel URL. Always convert Instagram links to the main profile URL.\n- **DO NOT** return aggregator URLs (TripAdvisor, Yelp, generic blogs) unless they contain the only valid Maps link.\n- **DO NOT** include any explanation, JSON formatting, or markdown.\n\n### Input Data\n{{ JSON.stringify($json) }}\n\n### Output Requirement\nReturn ONLY the raw URL string (e.g., https://www.instagram.com/username/ OR https://maps.app.goo.gl/...).\nIf no valid profile or map link is found, return the word: null"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        -4144,
+        256
+      ],
+      "id": "f027a7fe-079e-43d8-94c6-d5b07b3c72e2",
+      "name": "AI Agent",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -4080,
+        480
+      ],
+      "id": "77c4187d-d53b-4d65-8b5d-69d0b49978a0",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "YXrAUY1bjwbH5FBX",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "62e37616-92fc-4014-8e13-ec93847c8468",
+              "leftValue": "={{ $json.output }}",
+              "rightValue": "null",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -3792,
+        256
+      ],
+      "id": "4cfa799d-d5d9-4669-b15b-e1878617161a",
+      "name": "If1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -3568,
+        304
+      ],
+      "id": "e4cd975c-b1f6-452e-a768-5f5ad1099060",
+      "name": "No Operation, do nothing1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -5680,
+        448
+      ],
+      "id": "9491bb9b-a4fc-47c8-a02c-97dcda441f41",
+      "name": "Google Gemini Chat Model12",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "YXrAUY1bjwbH5FBX",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Here is the JSON data to analyze:\n{{ JSON.stringify($json) }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=You are a Business Data Analyst. Your task is to verify if a place found via Google Maps scraping matches the user's Target Category and Location.\n\n### 1. Inputs\n- **Target Category:** {{ JSON.parse($json.searchData).Type }}\n- **Target Location:** {{ JSON.parse($json.searchData).Location }}\n- **Scraped Data:** {{ $json.googleSearchResults }}\n\n### 2. Analysis Logic\nExamine the \"Scraped Data\" (JSON string from Google Maps):\n\n1. **Exact Category Match:** Check the `categoryName` and the `categories` array in the Scraped Data. \n    - If the Target is \"Cafe\" but Scraped Data says \"Gym\", \"Wellness Center\", or \"Fitness\" -> FAIL (Reason: WRONG_TYPE).\n2. **Business Nature:** Look at `additionalInfo` and `reviewsTags`. \n    - If Target is \"Cafe\" but tags mention \"Sauna\", \"Ice bath\", or \"Workout\" -> FAIL (Reason: WRONG_TYPE).\n3. **Location Match:** Check the `address` and `city` fields. \n    - Does it match \"{{ JSON.parse($json.searchData).Location }}\"? If not -> FAIL (Reason: WRONG_LOCATION).\n\n### 3. Output Requirement\n- RETURN ONLY A RAW JSON OBJECT.\n- NO MARKDOWN (No ```json).\n- Start with { and end with }.\n\n**Structure:**\n{\n  \"name\": \"Title from Scraped Data\",\n  \"status\": \"PASS\" OR \"FAIL\",\n  \"reason\": \"MATCH\" | \"NOT_BUSINESS\" | \"WRONG_TYPE\" | \"WRONG_LOCATION\",\n  \"detected_type\": \"The main category found (e.g., 'Gym')\",\n  \"verification_details\": \"Brief explanation based on categories and tags found\",\n  \"request_id\": \"{{ JSON.parse($json.searchData).ScarpeInvokeID }}\"\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        -5744,
+        224
+      ],
+      "id": "b601d287-0220-4b8c-b652-960f7a6d26a1",
+      "name": "AI Agent12",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -5168,
+        320
+      ],
+      "id": "c12b96ea-c1b5-4843-9128-5b9469d15456",
+      "name": "No Operation, do nothing5"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5249b8b4-c7f6-428c-a5b0-23606e6315ed",
+              "leftValue": "={{ $json.output.parseJson().status }}",
+              "rightValue": "FAIL",
+              "operator": {
+                "type": "string",
+                "operation": "notContains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -5392,
+        224
+      ],
+      "id": "ec339621-d23b-47e4-b961-7466c083ec9a",
+      "name": "If relevant"
+    },
+    {
+      "parameters": {
+        "operation": "Run actor and get dataset",
+        "actorSource": "store",
+        "actorId": {
+          "__rl": true,
+          "value": "nwua9Gu5YrADL7ZDj",
+          "mode": "list",
+          "cachedResultName": "Google Maps Scraper (compass/crawler-google-places)",
+          "cachedResultUrl": "https://console.apify.com/actors/nwua9Gu5YrADL7ZDj/input"
+        },
+        "customBody": "={\n    \"allPlacesNoAction\": \"\",\n    \"includeWebResults\": false,\n    \"language\": \"en\",\n    \"locationQuery\": \"{{ $('When Executed by Another Workflow').item.json.Location }}\",\n    \"maxCrawledPlacesPerSearch\": 1,\n    \"maxImages\": 0,\n    \"maxQuestions\": 0,\n    \"maxReviews\": 0,\n    \"maximumLeadsEnrichmentRecords\": 0,\n    \"reviewsOrigin\": \"all\",\n    \"reviewsSort\": \"newest\",\n    \"scrapeContacts\": false,\n    \"scrapeDirectories\": false,\n    \"scrapeImageAuthors\": false,\n    \"scrapePlaceDetailPage\": true,\n    \"scrapeReviewsPersonalData\": false,\n    \"scrapeTableReservationProvider\": false,\n    \"searchMatching\": \"all\",\n    \"searchStringsArray\": [\n        \"{{ $('When Executed by Another Workflow').item.json.place }} {{ $('When Executed by Another Workflow').item.json.Location }}\"\n    ],\n    \"skipClosedPlaces\": false,\n    \"website\": \"allPlaces\"\n}"
+      },
+      "type": "@apify/n8n-nodes-apify.apify",
+      "typeVersion": 1,
+      "position": [
+        -6640,
+        320
+      ],
+      "id": "e60099fc-6dad-4866-9280-783922926261",
+      "name": "Run search for type in location on Google search3",
+      "alwaysOutputData": true,
+      "credentials": {
+        "apifyApi": {
+          "id": "B45wSCvg3xLaLVQ6",
+          "name": "Apify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "191d2c61-3f5b-468d-b19a-457d67a58646",
+              "name": "=googleSearchResults",
+              "value": "={{ $item(\"0\").$node[\"Run search for type in location on Google search3\"].json }}",
+              "type": "string"
+            },
+            {
+              "id": "9e55cbd7-9db0-4f96-b749-adf6e8a2436d",
+              "name": "searchData",
+              "value": "={{ $item(\"0\").$node[\"When Executed by Another Workflow\"].json }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -5968,
+        224
+      ],
+      "id": "2b6f79a2-1388-45ae-bcd0-92398e9b6f3a",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -6640,
+        512
+      ],
+      "id": "1f34c863-97e7-4859-ad92-1ed3829bf9cf",
+      "name": "No Operation, do nothing2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e46480b0-a22a-4bef-a275-b5b9f748ddc6",
+              "leftValue": "={{ JSON.parse($json.output).status }}",
+              "rightValue": "NEW",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -6864,
+        416
+      ],
+      "id": "6fc8c1e7-16fe-4850-ab4f-a9395daf82ed",
+      "name": "If bussiness does not exist on table1",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Here is the JSON data to analyze:\n{{ JSON.stringify($json) }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=You are a Data Deduplication Expert. Your task is to determine if a \"New Place\" already exists within a list of \"Current Places\", even if the names are not identical.\n\n### 1. Inputs\n- **New Place to Check:** {{ $json.newPlace }}\n- **Current Places List:** {{ $json.currentPlaces.join(\", \") }}\n\n### 2. Matching Logic\nAnalyze the names based on the following criteria:\n1. **Semantic Similarity:** Are the core names the same? (e.g., \"What's Cup\" vs \"Whatscup\").\n2. **Contextual Suffixes:** Ignore generic suffixes like \"Cafe\", \"Restaurant\", \"Koh Phangan\", or \"Gym\" if the primary brand name matches.\n3. **Fuzzy Matching:** Account for minor spelling differences, symbols (like & vs and), or missing spaces.\n4. **Decision:** - If the New Place is a version of an existing name -> status: \"EXIST\".\n   - If it is a completely different business -> status: \"NEW\".\n\n### 3. Output Requirement\n- RETURN ONLY A RAW JSON OBJECT.\n- NO MARKDOWN (No ```json).\n- Start your response with { and end with }.\n\n**Structure:**\n{\n  \"input_name\": \"{{ $json.newPlace }}\",\n  \"matched_with\": \"The name from the current list it matched with\" OR null,\n  \"status\": \"EXIST\" OR \"NEW\",\n  \"explanation\": \"Briefly explain why it is a match or a new place\"\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        -7216,
+        416
+      ],
+      "id": "7ce99e45-b28d-4988-8fdb-a5cb30c2c909",
+      "name": "AI Agent13",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9989d750-e34f-4874-a042-700c2752b60e",
+              "name": "=currentPlaces",
+              "value": "={{ $json.currentPlaces }}",
+              "type": "array"
+            },
+            {
+              "id": "abbf1628-b33d-4c9e-8865-0eb9aa405366",
+              "name": "newPlace",
+              "value": "={{ $('When Executed by Another Workflow').item.json.place }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -7440,
+        416
+      ],
+      "id": "eb0984e8-8563-44f5-bb4c-1cb77e8b3e20",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -7152,
+        640
+      ],
+      "id": "092c0f9d-cbf5-4651-9b6b-ed5b48cb7010",
+      "name": "Google Gemini Chat Model2",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "YXrAUY1bjwbH5FBX",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "value": "HPCu1rkQQL1FPhUm",
+          "mode": "list",
+          "cachedResultName": "placesInfo",
+          "cachedResultUrl": "/projects/m4mqv4uVidZL7jnt/datatables/HPCu1rkQQL1FPhUm"
+        },
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "ScarpeInvokeID",
+              "condition": "ilike",
+              "keyValue": "={{ $json.ScarpeInvokeID }}"
+            }
+          ]
+        },
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1,
+      "position": [
+        -7888,
+        416
+      ],
+      "id": "254fdfb9-de41-4255-b319-8c261b87ee5d",
+      "name": "Get row(s)1",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "fullName",
+              "renameField": true,
+              "outputFieldName": "currentPlaces"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        -7664,
+        416
+      ],
+      "id": "23d88317-e6a0-4e9b-aa1e-08e46707f06a",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "value": "HPCu1rkQQL1FPhUm",
+          "mode": "list",
+          "cachedResultName": "placesInfo",
+          "cachedResultUrl": "/projects/m4mqv4uVidZL7jnt/datatables/HPCu1rkQQL1FPhUm"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "ScarpeInvokeID",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.ScarpeInvokeID }}"
+            },
+            {
+              "keyName": "Type",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.Type }}"
+            },
+            {
+              "keyName": "locationName",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.Location }}"
+            }
+          ]
+        },
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1,
+      "position": [
+        -8560,
+        416
+      ],
+      "id": "3dcbbbdc-d65c-4184-a98d-ee7cfe58aecf",
+      "name": "Get row(s)2",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "id"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        -8336,
+        416
+      ],
+      "id": "9abcf3e8-fa0e-4a88-b8f9-754bfb055a0b",
+      "name": "Aggregate1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c063c431-aae3-4be7-bb67-e42b9d0646b1",
+              "leftValue": "={{ $json.id.length}}",
+              "rightValue": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -8112,
+        416
+      ],
+      "id": "f3310574-3022-44fe-99cc-e18c0f0aff8d",
+      "name": "If reached to results number"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "value": "HPCu1rkQQL1FPhUm",
+          "mode": "list",
+          "cachedResultName": "placesInfo",
+          "cachedResultUrl": "/projects/m4mqv4uVidZL7jnt/datatables/HPCu1rkQQL1FPhUm"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "placeId",
+              "condition": "ilike",
+              "keyValue": "={{ $json.placeId }}"
+            },
+            {
+              "keyName": "ScarpeInvokeID",
+              "condition": "ilike",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.ScarpeInvokeID }}"
+            }
+          ]
+        },
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1,
+      "position": [
+        -6416,
+        320
+      ],
+      "id": "952b8ada-f8b8-48ef-a3dc-435aed180a1e",
+      "name": "Get row(s)3",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c063c431-aae3-4be7-bb67-e42b9d0646b1",
+              "leftValue": "={{ $('Get row(s)3').item.json.values().length }}",
+              "rightValue": "=0",
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -6192,
+        320
+      ],
+      "id": "72cbf9f0-376e-4498-9027-69012a368ad7",
+      "name": "If place id not exists"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -5968,
+        416
+      ],
+      "id": "b4c8ee04-5dfd-4a2f-9f4a-d2b38924d9fa",
+      "name": "No Operation, do nothing3"
+    }
+  ],
+  "pinData": {},
+  "repo_name": "lost-scraping",
+  "repo_owner": "trendlyorg",
+  "repo_path": "workflows/",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-08T06:01:57.405Z",
+      "createdAt": "2025-12-08T06:01:57.405Z",
+      "role": "workflow:owner",
+      "workflowId": "jmtISFsrzhnL2mcN",
+      "projectId": "m4mqv4uVidZL7jnt"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-28T04:02:37.000Z",
+  "versionId": "00f62fef-7699-4ac3-a318-3129ec2fada4"
+}
