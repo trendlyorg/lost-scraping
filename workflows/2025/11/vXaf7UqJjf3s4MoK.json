@@ -1,0 +1,292 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Set run",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call 'Instagram Scraper'": {
+      "main": [
+        []
+      ]
+    },
+    "Set run": {
+      "main": [
+        [
+          {
+            "node": "Call 'Instagram Scraper'",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Call 'TIkTok Scarper'",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call 'TIkTok Scarper'": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-11-26T05:37:25.662Z",
+  "id": "vXaf7UqJjf3s4MoK",
+  "isArchived": true,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Lost Social Media Scarping",
+  "nodes": [
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "iV8ZBQIeXVdcX8ir",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/iV8ZBQIeXVdcX8ir",
+          "cachedResultName": "Instagram Scraper"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Location": "={{ $json.data.Location }}",
+            "Type": "={{ $json.data.Type }}",
+            "RequestID": "={{ $json.data.RequestID }}",
+            "numberOfResults": "={{ $json.numberOfResults }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "RequestID",
+              "displayName": "RequestID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        -992,
+        2672
+      ],
+      "id": "ba552396-9415-4768-a5c1-04ac9a291755",
+      "name": "Call 'Instagram Scraper'"
+    },
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "Location"
+            },
+            {
+              "name": "Type"
+            },
+            {
+              "name": "AgeRange"
+            },
+            {
+              "name": "DietaryPrefs"
+            },
+            {
+              "name": "TravelStyle"
+            },
+            {
+              "name": "BudgetRange"
+            },
+            {
+              "name": "RequestID"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1440,
+        2768
+      ],
+      "id": "7ddd5f1f-7ec9-4fd0-a99f-5e182b3bccbc",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4f319908-c58b-4b76-adc8-b2a5f4b189b1",
+              "name": "numberOfResults",
+              "value": 1,
+              "type": "number"
+            },
+            {
+              "id": "cb359b5f-1b06-4c00-9603-8b596f0871a1",
+              "name": "=data",
+              "value": "={{ $json }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1216,
+        2768
+      ],
+      "id": "4abcb9f6-6191-4aff-bfa5-a19086c70634",
+      "name": "Set run"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "FTLS94ZYDDev5JVy",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/FTLS94ZYDDev5JVy",
+          "cachedResultName": "TIkTok Scarper"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Location": "={{ $json.data.Location }}",
+            "Type": "={{ $json.data.Type }}",
+            "RequestID": "={{ $json.data.RequestID }}",
+            "numberOfResults": "={{ $json.numberOfResults }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "RequestID",
+              "displayName": "RequestID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        -992,
+        2864
+      ],
+      "id": "298a9218-0c2c-4721-b526-8e5cadcc681a",
+      "name": "Call 'TIkTok Scarper'"
+    }
+  ],
+  "pinData": {},
+  "repo_name": "lost-scraping",
+  "repo_owner": "trendlyorg",
+  "repo_path": "workflows/",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-11-26T05:37:25.665Z",
+      "createdAt": "2025-11-26T05:37:25.665Z",
+      "role": "workflow:owner",
+      "workflowId": "vXaf7UqJjf3s4MoK",
+      "projectId": "m4mqv4uVidZL7jnt"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-18T07:15:42.000Z",
+  "versionId": "a80ca5e2-ae59-4819-89f0-e696221187b3"
+}
