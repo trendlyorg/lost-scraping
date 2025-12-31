@@ -1,0 +1,240 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request - Check if data exist in table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request - Check if data exist in table": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Discord",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait Before Retry",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait Before Retry": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request - Check if data exist in table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-21T07:54:48.188Z",
+  "id": "WMIyzGmE70ao1edX",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Check DynamoDB updated data",
+  "nodes": [
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "Type"
+            },
+            {
+              "name": "Location"
+            },
+            {
+              "name": "ScarpeInvokeID"
+            },
+            {
+              "name": "numberOfResults",
+              "type": "number"
+            },
+            {
+              "name": "UserID"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        1680,
+        1344
+      ],
+      "id": "325fd341-1125-4df9-9f10-2899b13fbe98",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://dynamodb.us-east-1.amazonaws.com",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "aws",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Amz-Target",
+              "value": "DynamoDB_20120810.Query"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/x-amz-json-1.0"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"TableName\": \"lost-development-places-table\",\n  \"IndexName\": \"ScarpeInvokeIDIndex\",\n  \"KeyConditionExpression\": \"#scarpeInvokeId = :scarpeInvokeIdVal\",\n  \"FilterExpression\": \"#type = :typeVal AND #location = :locationVal AND #userID = :userIDVal\",\n  \"ExpressionAttributeNames\": {\n    \"#scarpeInvokeId\": \"ScarpeInvokeID\",\n    \"#type\": \"Type\",\n    \"#location\": \"Location\",\n    \"#userID\": \"UserID\"\n  },\n  \"ExpressionAttributeValues\": {\n    \":scarpeInvokeIdVal\": { \"S\": \"{{ $('When Executed by Another Workflow').item.json.ScarpeInvokeID }}\" },\n    \":typeVal\": { \"S\": \"{{ $('When Executed by Another Workflow').item.json.Type }}\" },\n    \":locationVal\": { \"S\": \"{{ $('When Executed by Another Workflow').item.json.Location }}\" },\n    \":userIDVal\": { \"S\": \"{{$('When Executed by Another Workflow').item.json.UserID}}\" }\n  },\n  \"Limit\": 10\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1904,
+        1344
+      ],
+      "id": "9c936025-8a99-4c3e-ac29-abedb1d7df5a",
+      "name": "HTTP Request - Check if data exist in table",
+      "credentials": {
+        "aws": {
+          "id": "nt5J8Jtb8JM9PCYe",
+          "name": "AWS account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f733fa68-36b4-4244-9c02-9af3d12b356d",
+              "leftValue": "={{ $json.data.parseJson().Count }}",
+              "rightValue": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2128,
+        1264
+      ],
+      "id": "2c0c54b9-37f3-4809-82d2-4d843f22d0ea",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "authentication": "webhook",
+        "content": "=✅ Data found in DynamoDB table!\n\n**Type:** {{ $('When Executed by Another Workflow').item.json.Type }}\n**Location:** {{ $('When Executed by Another Workflow').item.json.Location }}\n**ScarpeInvokeID:** {{ $('When Executed by Another Workflow').item.json.ScarpeInvokeID }}\n**Count:** {{ $('HTTP Request - Check if data exist in table').item.json.data.parseJson().Count }} item(s) found\n**UserID:** {{ $('HTTP Request - Check if data exist in table').item.json.data.parseJson().Items.map(item => item.UserID.S).join('\\n') }}\n\n**Places:**\n{{ $('HTTP Request - Check if data exist in table').item.json.data.parseJson().Items.map(item => \"• \" + item.fullName.S).join('\\n') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 2,
+      "position": [
+        2352,
+        1216
+      ],
+      "id": "b2d1d503-07ac-4f3b-91d5-cfc4f2211a2c",
+      "name": "Discord",
+      "webhookId": "7101f88d-dbea-4779-8154-53a49ae3d1bf",
+      "credentials": {
+        "discordWebhookApi": {
+          "id": "pU9Lf6ogboVq8BqM",
+          "name": "Discord Webhook account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "id": "41284958-b3c4-4c81-8aa0-15dda6ba460f",
+      "name": "Wait Before Retry",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2352,
+        1440
+      ],
+      "webhookId": "ac1798b4-5b58-4ce7-b4de-e3df266c1e42"
+    }
+  ],
+  "pinData": {
+    "When Executed by Another Workflow": [
+      {
+        "json": {
+          "Type": "Resturant",
+          "Location": "koh-phangan",
+          "RequestID": "pbnsmxz51jnki8vonrmd5k",
+          "numberOfResults": 1,
+          "UserID": "e4a844a8-20c1-7021-9ca9-5d354ed881a2"
+        }
+      }
+    ]
+  },
+  "repo_name": "lost-scraping",
+  "repo_owner": "trendlyorg",
+  "repo_path": "workflows/",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-21T07:54:48.191Z",
+      "createdAt": "2025-12-21T07:54:48.191Z",
+      "role": "workflow:owner",
+      "workflowId": "WMIyzGmE70ao1edX",
+      "projectId": "m4mqv4uVidZL7jnt"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-28T07:27:34.000Z",
+  "versionId": "cde42f58-6d43-451d-89c7-0469b2f5f6a1"
+}
