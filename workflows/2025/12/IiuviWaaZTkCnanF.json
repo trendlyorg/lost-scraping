@@ -1,0 +1,347 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Get row(s)2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s)2": {
+      "main": [
+        [
+          {
+            "node": "Aggregate1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate1": {
+      "main": [
+        [
+          {
+            "node": "If reached to results number",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If reached to results number": {
+      "main": [
+        [
+          {
+            "node": "Get row(s)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s)": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-14T04:07:55.651Z",
+  "id": "IiuviWaaZTkCnanF",
+  "isArchived": false,
+  "meta": null,
+  "name": "Update DynamoDB with data",
+  "nodes": [
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "Location"
+            },
+            {
+              "name": "Type"
+            },
+            {
+              "name": "ScarpeInvokeID"
+            },
+            {
+              "name": "numberOfResults",
+              "type": "number"
+            },
+            {
+              "name": "Source"
+            },
+            {
+              "name": "UserID"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        2352,
+        -48
+      ],
+      "id": "e59af99a-fa59-4387-a177-16e01d154b75",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://dynamodb.us-east-1.amazonaws.com",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "aws",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Amz-Target",
+              "value": "DynamoDB_20120810.PutItem"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/x-amz-json-1.0"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  \"TableName\": \"lost-development-places-table\",\n  \"Item\": {\n    \"ScarpeInvokeID\": { \"S\": String($json.ScarpeInvokeID || '') },\n    \"UserID\": { \"S\": String($json.UserID || '') },\n    \"placeId\": { \"S\": String($json.placeId || '') },\n    \"fullName\": { \"S\": String($json.fullName || '') },\n    \"Location\": { \"S\": String($json.locationName || '') },\n    \"instagramProfileUrl\": { \"S\": String($json.instagramProfileUrl || '') },\n    \"price\": { \"S\": String($json.price || '') },\n    \"address\": { \"S\": String($json.address || '') },\n    \"openingHours\": { \"S\": String($json.openingHours || '') },\n    \"imageUrl\": { \"S\": String($json.imageUrl || '') },\n    \"additionalInfo\": { \"S\": String($json.additionalInfo || '') },\n    \"searchPageUrl\": { \"S\": String($json.searchPageUrl || '') },\n    \"Type\": { \"S\": String($json.Type || '') },\n    \"CreatedAt\": { \"S\": new Date().toISOString() }\n  }\n} }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        3696,
+        -48
+      ],
+      "id": "614f1e8b-f24a-440f-893c-3eccba51b675",
+      "name": "HTTP Request",
+      "credentials": {
+        "aws": {
+          "id": "nt5J8Jtb8JM9PCYe",
+          "name": "AWS account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "value": "HPCu1rkQQL1FPhUm",
+          "mode": "list",
+          "cachedResultName": "placesInfo",
+          "cachedResultUrl": "/projects/m4mqv4uVidZL7jnt/datatables/HPCu1rkQQL1FPhUm"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "ScarpeInvokeID",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.ScarpeInvokeID }}"
+            },
+            {
+              "keyName": "Type",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.Type }}"
+            },
+            {
+              "keyName": "Source",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.Source }}"
+            }
+          ]
+        },
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1,
+      "position": [
+        2576,
+        -48
+      ],
+      "id": "0c2b86d2-736e-4dc3-b679-a85acb6f82f2",
+      "name": "Get row(s)2",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "id"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        2800,
+        -48
+      ],
+      "id": "018409f3-533c-4dab-bc94-81b91f5097a8",
+      "name": "Aggregate1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c063c431-aae3-4be7-bb67-e42b9d0646b1",
+              "leftValue": "={{ $json.id.length}}",
+              "rightValue": "={{ $('When Executed by Another Workflow').item.json.numberOfResults }}",
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3024,
+        -48
+      ],
+      "id": "e241085a-8fac-4f14-89a1-10cb8af6d050",
+      "name": "If reached to results number"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "value": "HPCu1rkQQL1FPhUm",
+          "mode": "list",
+          "cachedResultName": "placesInfo",
+          "cachedResultUrl": "/projects/m4mqv4uVidZL7jnt/datatables/HPCu1rkQQL1FPhUm"
+        },
+        "matchType": "allConditions",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "ScarpeInvokeID",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.ScarpeInvokeID }}"
+            },
+            {
+              "keyName": "Type",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.Type }}"
+            },
+            {
+              "keyName": "Source",
+              "keyValue": "={{ $('When Executed by Another Workflow').item.json.Source }}"
+            }
+          ]
+        },
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1,
+      "position": [
+        3248,
+        -48
+      ],
+      "id": "22dbe70d-0bee-49bc-8d56-8c66f3b4c264",
+      "name": "Get row(s)",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        3472,
+        -48
+      ],
+      "id": "0bec5c0a-a936-4ad1-abb6-b8bc58fcf171",
+      "name": "Loop Over Items"
+    }
+  ],
+  "pinData": {
+    "When Executed by Another Workflow": [
+      {
+        "json": {
+          "Location": "koh-phangan",
+          "Type": "Cafe",
+          "RequestID": "0mweyunwgix9vuholn8y85",
+          "numberOfResults": 1,
+          "Source": "Instagram",
+          "UserID": "e4a844a8-20c1-7021-9ca9-5d354ed881a2"
+        }
+      }
+    ]
+  },
+  "repo_name": "lost-scraping",
+  "repo_owner": "trendlyorg",
+  "repo_path": "workflows/",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-14T04:07:55.654Z",
+      "createdAt": "2025-12-14T04:07:55.654Z",
+      "role": "workflow:owner",
+      "workflowId": "IiuviWaaZTkCnanF",
+      "projectId": "m4mqv4uVidZL7jnt"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-28T07:27:11.000Z",
+  "versionId": "d33f5a3b-c396-4e11-a508-bdffe1aa8e9c"
+}
