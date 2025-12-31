@@ -1,0 +1,1668 @@
+{
+  "active": true,
+  "activeVersion": {
+    "updatedAt": "2025-12-31T02:31:26.741Z",
+    "createdAt": "2025-12-31T02:31:26.741Z",
+    "versionId": "877e33b7-db0b-4820-bc0a-ba7f90ec71a4",
+    "workflowId": "WgwMyYlDDXhzBVrS",
+    "nodes": [
+      {
+        "parameters": {
+          "httpMethod": "POST",
+          "path": "places",
+          "responseMode": "responseNode",
+          "options": {}
+        },
+        "id": "3f2bafcf-3185-4b7b-b859-d81db51b54e6",
+        "name": "Receive User Preferences",
+        "type": "n8n-nodes-base.webhook",
+        "typeVersion": 2.1,
+        "position": [
+          336,
+          1088
+        ],
+        "webhookId": "72df1773-7acb-4dde-8e3a-e2016669ffa6"
+      },
+      {
+        "parameters": {
+          "respondWith": "json",
+          "responseBody": "={{ { success: false, error: 'Validation Failed. Missing required fields.', missing_fields: $json.missingKeys } }}",
+          "options": {
+            "responseCode": 404
+          }
+        },
+        "id": "883b76f8-6d93-4a2c-9e9a-c6d3a0a531b9",
+        "name": "Return Results to User1",
+        "type": "n8n-nodes-base.respondToWebhook",
+        "typeVersion": 1.5,
+        "position": [
+          1008,
+          1088
+        ]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "strict",
+              "version": 2
+            },
+            "conditions": [
+              {
+                "id": "2100072f-2ecc-441c-85db-5b389bb5376c",
+                "leftValue": "={{ $json.validationSucceeded }}",
+                "rightValue": "true",
+                "operator": {
+                  "type": "boolean",
+                  "operation": "true",
+                  "singleValue": true
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2.2,
+        "position": [
+          784,
+          1088
+        ],
+        "id": "6dd3a5e6-54b0-4597-88ea-0e6c97f74ded",
+        "name": "If valid"
+      },
+      {
+        "parameters": {
+          "jsCode": "const criticalKeys = [\n    \"location\",       \n    \"travelerGroup\",  \n    \"ageRange\",\n    \"dietaryPrefs\",\n    \"travelStyle\",\n    \"budgetRange\",\n    \"user_id\"\n];\n\nfor (const item of items) {\n    const missingKeys = [];\n    const inputData = item.json.body; \n    \n    if (!inputData) {\n        item.json.validationSucceeded = false;\n        item.json.missingKeys = criticalKeys;\n        return items;\n    }\n    \n    for (const key of criticalKeys) {\n        if (!(key in inputData) || inputData[key] === null || inputData[key] === \"\") {\n            missingKeys.push(key);\n        }\n    }\n    \n    item.json.missingKeys = missingKeys;\n    \n    item.json.validationSucceeded = missingKeys.length === 0;\n}\n\nreturn items;"
+        },
+        "type": "n8n-nodes-base.code",
+        "typeVersion": 2,
+        "position": [
+          560,
+          1088
+        ],
+        "id": "8f9e4d94-81c6-426c-b870-608fb5266256",
+        "name": "Keys validation"
+      },
+      {
+        "parameters": {
+          "jsCode": "const searchTypes = [\n    \"Cafe\",\n    \"Resturant\"\n];\n\nconst itemsToReturn = [];\nconst originalItem = items[0].json;\nconst queryData = originalItem.body || {};\n\nconst scarpeInvokeID = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);\n\nconst userID = originalItem.body.user_id;\n\nfor (const type of searchTypes) {\n\n    itemsToReturn.push({\n        json: {\n            ...originalItem, \n            ...queryData, \n            Type: type,\n            ScarpeInvokeID: scarpeInvokeID,\n            Status: 'Pending',\n            UserID: userID\n        }\n    });\n}\n\nreturn itemsToReturn;"
+        },
+        "type": "n8n-nodes-base.code",
+        "typeVersion": 2,
+        "position": [
+          1008,
+          896
+        ],
+        "id": "ff88151d-79e1-4d7e-8bac-ecca93f06cd2",
+        "name": "Create UUID"
+      },
+      {
+        "parameters": {
+          "respondWith": "text",
+          "responseBody": "={{ { status: $('Create UUID').item.json.Status , validInput: $('If valid').item.json.validationSucceeded, message: 'Processing started. Use the ID below to track results.', request_id: $('Create UUID').item.json.ScarpeInvokeID } }}",
+          "options": {
+            "responseCode": 202
+          }
+        },
+        "id": "ad265952-b9e1-45fa-b256-4e78938d0eb8",
+        "name": "Return UUID to user",
+        "type": "n8n-nodes-base.respondToWebhook",
+        "typeVersion": 1.5,
+        "position": [
+          1680,
+          464
+        ]
+      },
+      {
+        "parameters": {
+          "method": "POST",
+          "url": "https://dynamodb.us-east-1.amazonaws.com",
+          "authentication": "predefinedCredentialType",
+          "nodeCredentialType": "aws",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "X-Amz-Target",
+                "value": "DynamoDB_20120810.PutItem"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/x-amz-json-1.0"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={\n  \"TableName\": \"lost-development-requests-status-table\",\n  \"Item\": {\n    \"ScarpeInvokeID\": { \"S\": \"{{ $json.ScarpeInvokeID }}\" },\n    \"UserID\": { \"S\": \"{{ $json.UserID }}\" },\n    \"Type\": { \"S\": \"{{ $json.Type }}\" },\n    \"Status\": { \"S\": \"{{ $json.Status }}\" },\n    \"location\": { \"S\": \"{{ $json.body.location }}\" },\n    \"CreatedAt\": { \"S\": \"{{ (new Date()).toISOString() }}\" }\n  }\n}",
+          "options": {}
+        },
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.3,
+        "position": [
+          1456,
+          992
+        ],
+        "id": "ad026b60-1bae-4c05-a7a3-bf1d63e9ff23",
+        "name": "HTTP Request",
+        "credentials": {
+          "aws": {
+            "id": "nt5J8Jtb8JM9PCYe",
+            "name": "AWS account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "assignments": {
+            "assignments": [
+              {
+                "id": "b6a46b80-e65e-46f6-9999-e0b502eb9842",
+                "name": "Location",
+                "value": "={{ $('Create UUID').item.json.body.location }}",
+                "type": "string"
+              },
+              {
+                "id": "adc45627-6ba2-400a-a9f6-d471954bf949",
+                "name": "Type",
+                "value": "={{ $('Create UUID').item.json.Type }}",
+                "type": "string"
+              },
+              {
+                "id": "c6b17511-c580-40a6-84a1-d85dcc533ee3",
+                "name": "AgeRange",
+                "value": "={{ $('Create UUID').item.json.body.ageRange }}",
+                "type": "string"
+              },
+              {
+                "id": "44f809ac-c20f-451b-9fcd-7ee934ee42ce",
+                "name": "DietaryPrefs",
+                "value": "={{ $('Create UUID').item.json.body.dietaryPrefs }}",
+                "type": "string"
+              },
+              {
+                "id": "6b071b35-cb6d-484f-a85a-452233e92a37",
+                "name": "TravelStyle",
+                "value": "={{ $('Create UUID').item.json.body.travelStyle }}",
+                "type": "string"
+              },
+              {
+                "id": "47bf46d7-6dab-4d32-9240-9fcbdbacda49",
+                "name": "BudgetRange",
+                "value": "={{ $('Create UUID').item.json.body.budgetRange }}",
+                "type": "string"
+              },
+              {
+                "id": "533e92fd-036a-4b3c-b064-67636af5976b",
+                "name": "ScarpeInvokeID",
+                "value": "={{ $('Create UUID').item.json.ScarpeInvokeID }}",
+                "type": "string"
+              },
+              {
+                "id": "3fc602be-69cb-4983-8b36-336b8eaf2f19",
+                "name": "numberOfResults",
+                "value": 1,
+                "type": "number"
+              },
+              {
+                "id": "18d98ad3-4d3d-478f-a89a-f46403f9e35e",
+                "name": "=UserID",
+                "value": "={{ $('Create UUID').item.json.user_id }}",
+                "type": "string"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 3.4,
+        "position": [
+          1680,
+          992
+        ],
+        "id": "8d00b632-4133-4ab3-98fc-4aa8e6f312a4",
+        "name": "Restore data"
+      },
+      {
+        "parameters": {
+          "options": {}
+        },
+        "type": "n8n-nodes-base.splitInBatches",
+        "typeVersion": 3,
+        "position": [
+          1232,
+          896
+        ],
+        "id": "e1097f18-75e3-4a0f-bd8b-eb9c8fdf2dae",
+        "name": "Loop Over Items"
+      },
+      {
+        "parameters": {
+          "workflowId": {
+            "__rl": true,
+            "value": "iV8ZBQIeXVdcX8ir",
+            "mode": "list",
+            "cachedResultUrl": "/workflow/iV8ZBQIeXVdcX8ir",
+            "cachedResultName": "Instagram Scraper"
+          },
+          "workflowInputs": {
+            "mappingMode": "defineBelow",
+            "value": {
+              "Location": "={{ $json.Location }}",
+              "Type": "={{ $json.Type }}",
+              "numberOfResults": "={{ $json.numberOfResults }}",
+              "UserID": "={{ $json.UserID }}",
+              "ScarpeInvokeID": "={{ $json.ScarpeInvokeID }}"
+            },
+            "matchingColumns": [],
+            "schema": [
+              {
+                "id": "Location",
+                "displayName": "Location",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string",
+                "removed": false
+              },
+              {
+                "id": "Type",
+                "displayName": "Type",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string",
+                "removed": false
+              },
+              {
+                "id": "ScarpeInvokeID",
+                "displayName": "ScarpeInvokeID",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string",
+                "removed": false
+              },
+              {
+                "id": "numberOfResults",
+                "displayName": "numberOfResults",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "number",
+                "removed": false
+              },
+              {
+                "id": "UserID",
+                "displayName": "UserID",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string",
+                "removed": false
+              }
+            ],
+            "attemptToConvertTypes": false,
+            "convertFieldsToString": true
+          },
+          "options": {
+            "waitForSubWorkflow": false
+          }
+        },
+        "type": "n8n-nodes-base.executeWorkflow",
+        "typeVersion": 1.3,
+        "position": [
+          1904,
+          992
+        ],
+        "id": "ed664805-6cb1-421e-9937-fa7f1ae71c6c",
+        "name": "Call 'Instagram Scraper'"
+      },
+      {
+        "parameters": {
+          "workflowId": {
+            "__rl": true,
+            "value": "FTLS94ZYDDev5JVy",
+            "mode": "list",
+            "cachedResultUrl": "/workflow/FTLS94ZYDDev5JVy",
+            "cachedResultName": "TIkTok Scarper"
+          },
+          "workflowInputs": {
+            "mappingMode": "defineBelow",
+            "value": {
+              "Location": "={{ $json.Location }}",
+              "Type": "={{ $json.Type }}",
+              "numberOfResults": "={{ $json.numberOfResults }}",
+              "UserID": "={{ $json.UserID }}",
+              "ScarpeInvokeID": "={{ $json.ScarpeInvokeID }}"
+            },
+            "matchingColumns": [],
+            "schema": [
+              {
+                "id": "Location",
+                "displayName": "Location",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string",
+                "removed": false
+              },
+              {
+                "id": "Type",
+                "displayName": "Type",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string",
+                "removed": false
+              },
+              {
+                "id": "ScarpeInvokeID",
+                "displayName": "ScarpeInvokeID",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string",
+                "removed": false
+              },
+              {
+                "id": "numberOfResults",
+                "displayName": "numberOfResults",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "number",
+                "removed": false
+              },
+              {
+                "id": "UserID",
+                "displayName": "UserID",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string",
+                "removed": false
+              }
+            ],
+            "attemptToConvertTypes": false,
+            "convertFieldsToString": true
+          },
+          "options": {
+            "waitForSubWorkflow": false
+          }
+        },
+        "type": "n8n-nodes-base.executeWorkflow",
+        "typeVersion": 1.3,
+        "position": [
+          2128,
+          992
+        ],
+        "id": "f3acc87a-5e62-4c11-a4cd-40d3e449bb26",
+        "name": "Call 'TIkTok Scarper'"
+      },
+      {
+        "parameters": {},
+        "type": "n8n-nodes-base.noOp",
+        "typeVersion": 1,
+        "position": [
+          2352,
+          1088
+        ],
+        "id": "3174fd28-ef9a-44cd-9bdf-cbb7aea6cb63",
+        "name": "No Operation, do nothing"
+      },
+      {
+        "parameters": {
+          "options": {}
+        },
+        "type": "n8n-nodes-base.removeDuplicates",
+        "typeVersion": 2,
+        "position": [
+          1456,
+          512
+        ],
+        "id": "8610a3c9-a81e-4cfe-9748-e9909520fbd0",
+        "name": "Remove Duplicates"
+      },
+      {
+        "parameters": {
+          "options": {}
+        },
+        "type": "n8n-nodes-base.splitInBatches",
+        "typeVersion": 3,
+        "position": [
+          1680,
+          656
+        ],
+        "id": "d97b2a15-013e-4409-bf75-16aeab9704e7",
+        "name": "Loop Over Items1"
+      },
+      {
+        "parameters": {
+          "workflowId": {
+            "__rl": true,
+            "value": "WMIyzGmE70ao1edX",
+            "mode": "list",
+            "cachedResultUrl": "/workflow/WMIyzGmE70ao1edX",
+            "cachedResultName": "Check DynamoDB updated data"
+          },
+          "workflowInputs": {
+            "mappingMode": "defineBelow",
+            "value": {
+              "Location": "={{ $json.Location }}",
+              "Type": "={{ $json.Type }}",
+              "numberOfResults": "={{ $json.numberOfResults }}",
+              "UserID": "={{ $json.UserID }}",
+              "ScarpeInvokeID": "={{ $json.ScarpeInvokeID }}"
+            },
+            "matchingColumns": [],
+            "schema": [
+              {
+                "id": "Type",
+                "displayName": "Type",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string",
+                "removed": false
+              },
+              {
+                "id": "Location",
+                "displayName": "Location",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string",
+                "removed": false
+              },
+              {
+                "id": "ScarpeInvokeID",
+                "displayName": "ScarpeInvokeID",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string",
+                "removed": false
+              },
+              {
+                "id": "numberOfResults",
+                "displayName": "numberOfResults",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "number",
+                "removed": false
+              },
+              {
+                "id": "UserID",
+                "displayName": "UserID",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "canBeUsedToMatch": true,
+                "type": "string",
+                "removed": false
+              }
+            ],
+            "attemptToConvertTypes": false,
+            "convertFieldsToString": true
+          },
+          "options": {
+            "waitForSubWorkflow": true
+          }
+        },
+        "type": "n8n-nodes-base.executeWorkflow",
+        "typeVersion": 1.3,
+        "position": [
+          1904,
+          608
+        ],
+        "id": "4fecbbc3-f4cd-4646-8ad5-8d1bb8b3a010",
+        "name": "Call 'Check DynamoDB updated data'"
+      },
+      {
+        "parameters": {
+          "method": "POST",
+          "url": "https://dynamodb.us-east-1.amazonaws.com",
+          "authentication": "predefinedCredentialType",
+          "nodeCredentialType": "aws",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [
+              {
+                "name": "X-Amz-Target",
+                "value": "DynamoDB_20120810.UpdateItem"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/x-amz-json-1.0"
+              }
+            ]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={\n  \"TableName\": \"lost-development-requests-status-table\",\n  \"Key\": {\n    \"ScarpeInvokeID\": { \"S\": \"{{ $('Loop Over Items1').item.json.ScarpeInvokeID }}\" },\n    \"Type\": { \"S\": \"{{ $('Loop Over Items1').item.json.Type }}\" }\n  },\n  \"UpdateExpression\": \"SET #status = :status, UpdatedAt = :updatedAt\",\n  \"ExpressionAttributeNames\": {\n    \"#status\": \"Status\"\n  },\n  \"ExpressionAttributeValues\": {\n    \":status\": { \"S\": \"Success\" },\n    \":updatedAt\": { \"S\": \"{{ (new Date()).toISOString() }}\" }\n  }\n}",
+          "options": {}
+        },
+        "id": "02777852-a602-44ee-8930-bd11d5eb7eb7",
+        "name": "Update Status to Success1",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.3,
+        "position": [
+          2352,
+          656
+        ],
+        "credentials": {
+          "aws": {
+            "id": "nt5J8Jtb8JM9PCYe",
+            "name": "AWS account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "strict",
+              "version": 2
+            },
+            "conditions": [
+              {
+                "id": "2812a566-aa87-471b-bef5-65ede64138d0",
+                "leftValue": "={{ $json.success }}",
+                "rightValue": "",
+                "operator": {
+                  "type": "boolean",
+                  "operation": "true",
+                  "singleValue": true
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2.2,
+        "position": [
+          2128,
+          608
+        ],
+        "id": "78a83706-0457-44d7-8478-838c74a91f9a",
+        "name": "If success run"
+      },
+      {
+        "parameters": {},
+        "type": "n8n-nodes-base.noOp",
+        "typeVersion": 1,
+        "position": [
+          2352,
+          848
+        ],
+        "id": "01fe4c8e-729e-4d1f-82ea-c2fb5d810aaf",
+        "name": "No Operation, do nothing1"
+      }
+    ],
+    "connections": {
+      "Receive User Preferences": {
+        "main": [
+          [
+            {
+              "node": "Keys validation",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "If valid": {
+        "main": [
+          [
+            {
+              "node": "Create UUID",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "Return Results to User1",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Keys validation": {
+        "main": [
+          [
+            {
+              "node": "If valid",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Create UUID": {
+        "main": [
+          [
+            {
+              "node": "Loop Over Items",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "HTTP Request": {
+        "main": [
+          [
+            {
+              "node": "Restore data",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Restore data": {
+        "main": [
+          [
+            {
+              "node": "Call 'Instagram Scraper'",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Loop Over Items": {
+        "main": [
+          [
+            {
+              "node": "Remove Duplicates",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "HTTP Request",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Call 'Instagram Scraper'": {
+        "main": [
+          [
+            {
+              "node": "Call 'TIkTok Scarper'",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Call 'TIkTok Scarper'": {
+        "main": [
+          [
+            {
+              "node": "No Operation, do nothing",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "No Operation, do nothing": {
+        "main": [
+          [
+            {
+              "node": "Loop Over Items",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Remove Duplicates": {
+        "main": [
+          [
+            {
+              "node": "Return UUID to user",
+              "type": "main",
+              "index": 0
+            },
+            {
+              "node": "Loop Over Items1",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Loop Over Items1": {
+        "main": [
+          [],
+          [
+            {
+              "node": "Call 'Check DynamoDB updated data'",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Call 'Check DynamoDB updated data'": {
+        "main": [
+          [
+            {
+              "node": "If success run",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Update Status to Success1": {
+        "main": [
+          [
+            {
+              "node": "Loop Over Items1",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "If success run": {
+        "main": [
+          [
+            {
+              "node": "Update Status to Success1",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "No Operation, do nothing1",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "authors": "Or Herzog",
+    "name": null,
+    "description": null
+  },
+  "activeVersionId": "877e33b7-db0b-4820-bc0a-ba7f90ec71a4",
+  "connections": {
+    "Receive User Preferences": {
+      "main": [
+        [
+          {
+            "node": "Keys validation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If valid": {
+      "main": [
+        [
+          {
+            "node": "Create UUID",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Return Results to User1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Keys validation": {
+      "main": [
+        [
+          {
+            "node": "If valid",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create UUID": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Restore data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Restore data": {
+      "main": [
+        [
+          {
+            "node": "Call 'Instagram Scraper'",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Remove Duplicates",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call 'Instagram Scraper'": {
+      "main": [
+        [
+          {
+            "node": "Call 'TIkTok Scarper'",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call 'TIkTok Scarper'": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Remove Duplicates": {
+      "main": [
+        [
+          {
+            "node": "Return UUID to user",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Call 'Check DynamoDB updated data'",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call 'Check DynamoDB updated data'": {
+      "main": [
+        [
+          {
+            "node": "If success run",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Status to Success1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If success run": {
+      "main": [
+        [
+          {
+            "node": "Update Status to Success1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-11T03:59:51.190Z",
+  "id": "WgwMyYlDDXhzBVrS",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "User Preference to Search Query Transformer",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "places",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "3f2bafcf-3185-4b7b-b859-d81db51b54e6",
+      "name": "Receive User Preferences",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        336,
+        1088
+      ],
+      "webhookId": "72df1773-7acb-4dde-8e3a-e2016669ffa6"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { success: false, error: 'Validation Failed. Missing required fields.', missing_fields: $json.missingKeys } }}",
+        "options": {
+          "responseCode": 404
+        }
+      },
+      "id": "883b76f8-6d93-4a2c-9e9a-c6d3a0a531b9",
+      "name": "Return Results to User1",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        1008,
+        1088
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "2100072f-2ecc-441c-85db-5b389bb5376c",
+              "leftValue": "={{ $json.validationSucceeded }}",
+              "rightValue": "true",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        784,
+        1088
+      ],
+      "id": "6dd3a5e6-54b0-4597-88ea-0e6c97f74ded",
+      "name": "If valid"
+    },
+    {
+      "parameters": {
+        "jsCode": "const criticalKeys = [\n    \"location\",       \n    \"travelerGroup\",  \n    \"ageRange\",\n    \"dietaryPrefs\",\n    \"travelStyle\",\n    \"budgetRange\",\n    \"user_id\"\n];\n\nfor (const item of items) {\n    const missingKeys = [];\n    const inputData = item.json.body; \n    \n    if (!inputData) {\n        item.json.validationSucceeded = false;\n        item.json.missingKeys = criticalKeys;\n        return items;\n    }\n    \n    for (const key of criticalKeys) {\n        if (!(key in inputData) || inputData[key] === null || inputData[key] === \"\") {\n            missingKeys.push(key);\n        }\n    }\n    \n    item.json.missingKeys = missingKeys;\n    \n    item.json.validationSucceeded = missingKeys.length === 0;\n}\n\nreturn items;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        560,
+        1088
+      ],
+      "id": "8f9e4d94-81c6-426c-b870-608fb5266256",
+      "name": "Keys validation"
+    },
+    {
+      "parameters": {
+        "jsCode": "const searchTypes = [\n    \"Cafe\",\n    \"Resturant\"\n];\n\nconst itemsToReturn = [];\nconst originalItem = items[0].json;\nconst queryData = originalItem.body || {};\n\nconst scarpeInvokeID = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);\n\nconst userID = originalItem.body.user_id;\n\nfor (const type of searchTypes) {\n\n    itemsToReturn.push({\n        json: {\n            ...originalItem, \n            ...queryData, \n            Type: type,\n            ScarpeInvokeID: scarpeInvokeID,\n            Status: 'Pending',\n            UserID: userID\n        }\n    });\n}\n\nreturn itemsToReturn;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1008,
+        896
+      ],
+      "id": "ff88151d-79e1-4d7e-8bac-ecca93f06cd2",
+      "name": "Create UUID"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ { status: $('Create UUID').item.json.Status , validInput: $('If valid').item.json.validationSucceeded, message: 'Processing started. Use the ID below to track results.', request_id: $('Create UUID').item.json.ScarpeInvokeID } }}",
+        "options": {
+          "responseCode": 202
+        }
+      },
+      "id": "ad265952-b9e1-45fa-b256-4e78938d0eb8",
+      "name": "Return UUID to user",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        1680,
+        464
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://dynamodb.us-east-1.amazonaws.com",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "aws",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Amz-Target",
+              "value": "DynamoDB_20120810.PutItem"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/x-amz-json-1.0"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"TableName\": \"lost-development-requests-status-table\",\n  \"Item\": {\n    \"ScarpeInvokeID\": { \"S\": \"{{ $json.ScarpeInvokeID }}\" },\n    \"UserID\": { \"S\": \"{{ $json.UserID }}\" },\n    \"Type\": { \"S\": \"{{ $json.Type }}\" },\n    \"Status\": { \"S\": \"{{ $json.Status }}\" },\n    \"location\": { \"S\": \"{{ $json.body.location }}\" },\n    \"CreatedAt\": { \"S\": \"{{ (new Date()).toISOString() }}\" }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1456,
+        992
+      ],
+      "id": "ad026b60-1bae-4c05-a7a3-bf1d63e9ff23",
+      "name": "HTTP Request",
+      "credentials": {
+        "aws": {
+          "id": "nt5J8Jtb8JM9PCYe",
+          "name": "AWS account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b6a46b80-e65e-46f6-9999-e0b502eb9842",
+              "name": "Location",
+              "value": "={{ $('Create UUID').item.json.body.location }}",
+              "type": "string"
+            },
+            {
+              "id": "adc45627-6ba2-400a-a9f6-d471954bf949",
+              "name": "Type",
+              "value": "={{ $('Create UUID').item.json.Type }}",
+              "type": "string"
+            },
+            {
+              "id": "c6b17511-c580-40a6-84a1-d85dcc533ee3",
+              "name": "AgeRange",
+              "value": "={{ $('Create UUID').item.json.body.ageRange }}",
+              "type": "string"
+            },
+            {
+              "id": "44f809ac-c20f-451b-9fcd-7ee934ee42ce",
+              "name": "DietaryPrefs",
+              "value": "={{ $('Create UUID').item.json.body.dietaryPrefs }}",
+              "type": "string"
+            },
+            {
+              "id": "6b071b35-cb6d-484f-a85a-452233e92a37",
+              "name": "TravelStyle",
+              "value": "={{ $('Create UUID').item.json.body.travelStyle }}",
+              "type": "string"
+            },
+            {
+              "id": "47bf46d7-6dab-4d32-9240-9fcbdbacda49",
+              "name": "BudgetRange",
+              "value": "={{ $('Create UUID').item.json.body.budgetRange }}",
+              "type": "string"
+            },
+            {
+              "id": "533e92fd-036a-4b3c-b064-67636af5976b",
+              "name": "ScarpeInvokeID",
+              "value": "={{ $('Create UUID').item.json.ScarpeInvokeID }}",
+              "type": "string"
+            },
+            {
+              "id": "3fc602be-69cb-4983-8b36-336b8eaf2f19",
+              "name": "numberOfResults",
+              "value": 1,
+              "type": "number"
+            },
+            {
+              "id": "18d98ad3-4d3d-478f-a89a-f46403f9e35e",
+              "name": "=UserID",
+              "value": "={{ $('Create UUID').item.json.user_id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1680,
+        992
+      ],
+      "id": "8d00b632-4133-4ab3-98fc-4aa8e6f312a4",
+      "name": "Restore data"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1232,
+        896
+      ],
+      "id": "e1097f18-75e3-4a0f-bd8b-eb9c8fdf2dae",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "iV8ZBQIeXVdcX8ir",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/iV8ZBQIeXVdcX8ir",
+          "cachedResultName": "Instagram Scraper"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Location": "={{ $json.Location }}",
+            "Type": "={{ $json.Type }}",
+            "numberOfResults": "={{ $json.numberOfResults }}",
+            "UserID": "={{ $json.UserID }}",
+            "ScarpeInvokeID": "={{ $json.ScarpeInvokeID }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "ScarpeInvokeID",
+              "displayName": "ScarpeInvokeID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "UserID",
+              "displayName": "UserID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1904,
+        992
+      ],
+      "id": "ed664805-6cb1-421e-9937-fa7f1ae71c6c",
+      "name": "Call 'Instagram Scraper'"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "FTLS94ZYDDev5JVy",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/FTLS94ZYDDev5JVy",
+          "cachedResultName": "TIkTok Scarper"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Location": "={{ $json.Location }}",
+            "Type": "={{ $json.Type }}",
+            "numberOfResults": "={{ $json.numberOfResults }}",
+            "UserID": "={{ $json.UserID }}",
+            "ScarpeInvokeID": "={{ $json.ScarpeInvokeID }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "ScarpeInvokeID",
+              "displayName": "ScarpeInvokeID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "UserID",
+              "displayName": "UserID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        2128,
+        992
+      ],
+      "id": "f3acc87a-5e62-4c11-a4cd-40d3e449bb26",
+      "name": "Call 'TIkTok Scarper'"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2352,
+        1088
+      ],
+      "id": "3174fd28-ef9a-44cd-9bdf-cbb7aea6cb63",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.removeDuplicates",
+      "typeVersion": 2,
+      "position": [
+        1456,
+        512
+      ],
+      "id": "8610a3c9-a81e-4cfe-9748-e9909520fbd0",
+      "name": "Remove Duplicates"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1680,
+        656
+      ],
+      "id": "d97b2a15-013e-4409-bf75-16aeab9704e7",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "WMIyzGmE70ao1edX",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/WMIyzGmE70ao1edX",
+          "cachedResultName": "Check DynamoDB updated data"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Location": "={{ $json.Location }}",
+            "Type": "={{ $json.Type }}",
+            "numberOfResults": "={{ $json.numberOfResults }}",
+            "UserID": "={{ $json.UserID }}",
+            "ScarpeInvokeID": "={{ $json.ScarpeInvokeID }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "ScarpeInvokeID",
+              "displayName": "ScarpeInvokeID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numberOfResults",
+              "displayName": "numberOfResults",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "number",
+              "removed": false
+            },
+            {
+              "id": "UserID",
+              "displayName": "UserID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1904,
+        608
+      ],
+      "id": "4fecbbc3-f4cd-4646-8ad5-8d1bb8b3a010",
+      "name": "Call 'Check DynamoDB updated data'"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://dynamodb.us-east-1.amazonaws.com",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "aws",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Amz-Target",
+              "value": "DynamoDB_20120810.UpdateItem"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/x-amz-json-1.0"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"TableName\": \"lost-development-requests-status-table\",\n  \"Key\": {\n    \"ScarpeInvokeID\": { \"S\": \"{{ $('Loop Over Items1').item.json.ScarpeInvokeID }}\" },\n    \"Type\": { \"S\": \"{{ $('Loop Over Items1').item.json.Type }}\" }\n  },\n  \"UpdateExpression\": \"SET #status = :status, UpdatedAt = :updatedAt\",\n  \"ExpressionAttributeNames\": {\n    \"#status\": \"Status\"\n  },\n  \"ExpressionAttributeValues\": {\n    \":status\": { \"S\": \"Success\" },\n    \":updatedAt\": { \"S\": \"{{ (new Date()).toISOString() }}\" }\n  }\n}",
+        "options": {}
+      },
+      "id": "02777852-a602-44ee-8930-bd11d5eb7eb7",
+      "name": "Update Status to Success1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        2352,
+        656
+      ],
+      "credentials": {
+        "aws": {
+          "id": "nt5J8Jtb8JM9PCYe",
+          "name": "AWS account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "2812a566-aa87-471b-bef5-65ede64138d0",
+              "leftValue": "={{ $json.success }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2128,
+        608
+      ],
+      "id": "78a83706-0457-44d7-8478-838c74a91f9a",
+      "name": "If success run"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2352,
+        848
+      ],
+      "id": "01fe4c8e-729e-4d1f-82ea-c2fb5d810aaf",
+      "name": "No Operation, do nothing1"
+    }
+  ],
+  "pinData": {},
+  "repo_name": "lost-scraping",
+  "repo_owner": "trendlyorg",
+  "repo_path": "workflows/",
+  "settings": {
+    "executionOrder": "v1",
+    "saveExecutionProgress": true,
+    "callerPolicy": "any",
+    "availableInMCP": false
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-11T03:59:51.194Z",
+      "createdAt": "2025-12-11T03:59:51.194Z",
+      "role": "workflow:owner",
+      "workflowId": "WgwMyYlDDXhzBVrS",
+      "projectId": "m4mqv4uVidZL7jnt"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-12-31T02:31:26.000Z",
+  "versionId": "877e33b7-db0b-4820-bc0a-ba7f90ec71a4"
+}
